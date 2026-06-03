@@ -1,0 +1,421 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>GeoSBC · Soil Report Review & SBC Automation — Prototype</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Sora:wght@500;600;700&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --navy:#0D0F1E; --navy2:#1A1F38; --navy3:#252B4A;
+    --orange:#F15A24; --orange-soft:#FCE3DA; --orange-ink:#B5350F;
+    --ink:#1C1C2E; --mute:#6A6E7E; --faint:#9498A8;
+    --line:#E4E6EF; --line2:#EEF0F6; --bg:#F4F5F8; --card:#FFFFFF;
+    --green:#1D9E75; --green-bg:#E1F5EE; --amber:#BA7517; --amber-bg:#FAEEDA; --red:#C0392B; --red-bg:#FBEAEA;
+    --sora:'Sora',sans-serif; --sans:'IBM Plex Sans',sans-serif; --mono:'IBM Plex Mono',monospace;
+    --r:12px; --r-sm:8px;
+  }
+  *{box-sizing:border-box}
+  html,body{margin:0;padding:0}
+  body{
+    font-family:var(--sans); color:var(--ink); background:var(--bg);
+    background-image:linear-gradient(var(--line2) 1px,transparent 1px),linear-gradient(90deg,var(--line2) 1px,transparent 1px);
+    background-size:34px 34px; background-position:-1px -1px;
+    -webkit-font-smoothing:antialiased; line-height:1.5;
+  }
+  /* Header */
+  header{background:var(--navy); color:#fff; padding:14px 26px; display:flex; align-items:center; gap:14px;
+    border-bottom:3px solid var(--orange)}
+  .tmark{width:34px;height:34px;border-radius:8px;flex:0 0 auto}
+  .brand{font-family:var(--sora);font-weight:700;letter-spacing:.06em;font-size:15px}
+  .brand .sub{display:block;font-family:var(--sans);font-weight:400;letter-spacing:.02em;font-size:11px;color:#AEB2C4;margin-top:1px}
+  .prod{font-family:var(--sora);font-weight:600;font-size:15px;margin-left:6px;padding-left:16px;border-left:1px solid #333958;color:#fff}
+  .prod em{color:var(--orange);font-style:normal}
+  .htags{margin-left:auto;display:flex;align-items:center;gap:10px}
+  .pill{font-family:var(--mono);font-size:10.5px;letter-spacing:.08em;text-transform:uppercase;padding:5px 10px;border-radius:999px}
+  .pill.proto{background:var(--orange);color:#fff;font-weight:600}
+  .pill.dbx{background:#20264a;color:#C4C8D4;border:1px solid #333958}
+  /* Pipeline rail */
+  .rail{background:#fff;border-bottom:1px solid var(--line);padding:14px 26px;display:flex;gap:6px;overflow-x:auto}
+  .stage{display:flex;align-items:center;gap:10px;padding:6px 8px;flex:1 1 0;min-width:150px;opacity:.5;transition:opacity .4s}
+  .stage.active,.stage.done{opacity:1}
+  .stage .dot{width:26px;height:26px;border-radius:50%;flex:0 0 auto;display:grid;place-items:center;
+    font-family:var(--mono);font-weight:600;font-size:12px;background:var(--line);color:var(--mute);transition:.35s}
+  .stage.active .dot{background:var(--orange);color:#fff;box-shadow:0 0 0 4px var(--orange-soft)}
+  .stage.done .dot{background:var(--navy);color:#fff}
+  .stage .lbl{font-size:12.5px;font-weight:600;color:var(--ink);line-height:1.2}
+  .stage .lbl span{display:block;font-weight:400;font-size:10.5px;color:var(--faint)}
+  .stage .bar{flex:1;height:2px;background:var(--line);min-width:8px}
+  /* Layout */
+  main{max-width:1240px;margin:0 auto;padding:26px;display:grid;grid-template-columns:320px 1fr;gap:22px;align-items:start}
+  @media(max-width:900px){main{grid-template-columns:1fr}}
+  .panel{background:var(--card);border:1px solid var(--line);border-radius:var(--r);padding:20px;position:sticky;top:18px}
+  @media(max-width:900px){.panel{position:static}}
+  .eyebrow{font-family:var(--mono);font-size:10.5px;letter-spacing:.14em;text-transform:uppercase;color:var(--orange);font-weight:600;margin:0 0 10px}
+  h2.sec{font-family:var(--sora);font-size:17px;font-weight:600;margin:0 0 4px}
+  .meta{font-size:12px;color:var(--mute);margin:0 0 16px}
+  /* drop zone */
+  .drop{border:1.5px dashed var(--line);border-radius:var(--r-sm);padding:16px;text-align:center;background:var(--bg);cursor:pointer;transition:.2s}
+  .drop:hover{border-color:var(--orange);background:#fff}
+  .drop .dt{font-weight:600;font-size:13px}
+  .drop .ds{font-size:11.5px;color:var(--faint);margin-top:3px}
+  .loaded{display:flex;align-items:center;gap:10px;border:1px solid var(--line);border-radius:var(--r-sm);padding:11px 13px;background:#fff}
+  .loaded .fi{width:30px;height:30px;border-radius:7px;background:var(--orange-soft);color:var(--orange-ink);display:grid;place-items:center;font-family:var(--mono);font-weight:600;font-size:11px;flex:0 0 auto}
+  .loaded .fn{font-weight:600;font-size:13px;line-height:1.2}
+  .loaded .fm{font-size:11px;color:var(--faint)}
+  .kv{display:flex;justify-content:space-between;gap:10px;padding:7px 0;border-bottom:1px solid var(--line2);font-size:12.5px}
+  .kv:last-child{border-bottom:none}
+  .kv span{color:var(--mute)} .kv b{font-weight:600;text-align:right}
+  .field-label{font-size:11px;font-weight:600;letter-spacing:.04em;text-transform:uppercase;color:var(--faint);margin:18px 0 8px}
+  .seg{display:flex;border:1px solid var(--line);border-radius:var(--r-sm);overflow:hidden}
+  .seg button{flex:1;border:none;background:#fff;padding:9px 4px;font-family:var(--mono);font-size:12.5px;font-weight:500;color:var(--mute);cursor:pointer;border-right:1px solid var(--line);transition:.15s}
+  .seg button:last-child{border-right:none}
+  .seg button.on{background:var(--navy);color:#fff}
+  .seg button:not(.on):hover{background:var(--bg)}
+  .run{width:100%;margin-top:18px;background:var(--orange);color:#fff;border:none;border-radius:var(--r-sm);padding:13px;font-family:var(--sora);font-weight:600;font-size:14px;cursor:pointer;transition:.15s}
+  .run:hover{background:#d94c1b}
+  .run:disabled{background:var(--line);color:var(--faint);cursor:default}
+  .hint{font-size:11px;color:var(--faint);margin-top:10px;line-height:1.45}
+  /* results */
+  .results{display:flex;flex-direction:column;gap:18px}
+  .empty{background:var(--card);border:1px dashed var(--line);border-radius:var(--r);padding:60px 30px;text-align:center;color:var(--faint)}
+  .empty .big{font-family:var(--sora);font-size:18px;color:var(--mute);margin-bottom:6px}
+  .block{background:var(--card);border:1px solid var(--line);border-radius:var(--r);padding:20px 22px;opacity:0;transform:translateY(10px);transition:opacity .5s,transform .5s}
+  .block.show{opacity:1;transform:none}
+  .block h3{font-family:var(--sora);font-size:15px;font-weight:600;margin:0;display:flex;align-items:center;gap:9px}
+  .block h3 .n{width:22px;height:22px;border-radius:6px;background:var(--navy);color:#fff;display:grid;place-items:center;font-family:var(--mono);font-size:11px;font-weight:600}
+  .block .desc{font-size:12px;color:var(--mute);margin:3px 0 16px 31px}
+  /* extraction grid */
+  .pgrid{display:grid;grid-template-columns:repeat(2,1fr);gap:10px}
+  @media(max-width:560px){.pgrid{grid-template-columns:1fr}}
+  .pcard{border:1px solid var(--line);border-radius:var(--r-sm);padding:11px 13px}
+  .pcard .pl{font-size:11px;color:var(--mute);display:flex;justify-content:space-between;align-items:center}
+  .pcard .pv{font-family:var(--mono);font-weight:600;font-size:16px;margin-top:3px}
+  .pcard .pv small{font-family:var(--sans);font-weight:500;font-size:11px;color:var(--faint)}
+  .cite{font-family:var(--mono);font-size:9.5px;color:var(--faint);margin-top:5px}
+  .conf{font-family:var(--mono);font-size:9.5px;padding:2px 6px;border-radius:999px;font-weight:600}
+  .conf.hi{background:var(--green-bg);color:var(--green)} .conf.md{background:var(--amber-bg);color:var(--amber)}
+  /* flags */
+  .flag{display:flex;gap:11px;padding:11px 0;border-bottom:1px solid var(--line2)}
+  .flag:last-child{border-bottom:none}
+  .flag .ic{width:22px;height:22px;border-radius:6px;flex:0 0 auto;display:grid;place-items:center;font-weight:700;font-size:12px;font-family:var(--mono)}
+  .flag.warn .ic{background:var(--amber-bg);color:var(--amber)} .flag.ok .ic{background:var(--green-bg);color:var(--green)}
+  .flag .ft{font-weight:600;font-size:13px} .flag .fd{font-size:12px;color:var(--mute);margin-top:1px}
+  .flag .fp{font-family:var(--mono);font-size:9.5px;color:var(--faint);margin-top:3px}
+  /* SBC */
+  .sbcwrap{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+  @media(max-width:560px){.sbcwrap{grid-template-columns:1fr}}
+  .stat{border:1px solid var(--line);border-radius:var(--r-sm);padding:15px;position:relative;overflow:hidden}
+  .stat.gov{background:var(--navy);border-color:var(--navy)}
+  .stat .sl{font-size:11px;font-weight:600;letter-spacing:.03em;text-transform:uppercase;color:var(--faint)}
+  .stat.gov .sl{color:#9aa0bd}
+  .stat .sv{font-family:var(--mono);font-weight:600;font-size:34px;letter-spacing:-.02em;margin-top:6px;line-height:1}
+  .stat .sv small{font-size:14px;color:var(--orange);font-weight:600}
+  .stat.gov .sv{color:#fff}
+  .stat .sm{font-size:11px;color:var(--mute);margin-top:6px} .stat.gov .sm{color:#9aa0bd}
+  .govtag{position:absolute;top:11px;right:11px;font-family:var(--mono);font-size:9px;letter-spacing:.1em;background:var(--orange);color:#fff;padding:3px 7px;border-radius:999px;font-weight:600}
+  .barcmp{margin-top:16px}
+  .barrow{display:flex;align-items:center;gap:10px;margin-bottom:9px;font-size:11.5px}
+  .barrow .bl{width:78px;color:var(--mute);flex:0 0 auto}
+  .barrow .bt{flex:1;height:18px;background:var(--bg);border-radius:5px;overflow:hidden}
+  .barrow .bf{height:100%;border-radius:5px;transition:width .6s cubic-bezier(.2,.7,.2,1)}
+  .barrow .bv{width:66px;text-align:right;font-family:var(--mono);font-weight:600;flex:0 0 auto}
+  details.formula{margin-top:14px;border-top:1px solid var(--line2);padding-top:12px}
+  details.formula summary{cursor:pointer;font-size:12px;color:var(--orange);font-weight:600;font-family:var(--mono)}
+  details.formula .fx{font-family:var(--mono);font-size:11.5px;color:var(--mute);background:var(--bg);border-radius:var(--r-sm);padding:12px;margin-top:10px;line-height:1.7;white-space:pre-wrap}
+  /* recommendation */
+  .reco{display:flex;gap:14px;align-items:flex-start}
+  .reco .badge{flex:0 0 auto;width:74px;height:74px;border-radius:var(--r-sm);background:var(--orange);color:#fff;display:grid;place-items:center;text-align:center;font-family:var(--sora);font-weight:700;line-height:1.05}
+  .reco .badge span{display:block;font-family:var(--mono);font-weight:500;font-size:9px;letter-spacing:.06em;margin-top:3px;opacity:.9}
+  .reco .rt{font-family:var(--sora);font-size:16px;font-weight:600}
+  .reco .rd{font-size:12.5px;color:var(--mute);margin-top:4px}
+  .chips{display:flex;flex-wrap:wrap;gap:7px;margin-top:11px}
+  .chip{font-size:11px;font-weight:600;padding:5px 10px;border-radius:999px;background:var(--green-bg);color:var(--green)}
+  .chip.alt{background:var(--orange-soft);color:var(--orange-ink)}
+  /* summary */
+  .summary{font-size:13px;line-height:1.65}
+  .summary .stitle{font-family:var(--sora);font-size:14px;font-weight:600;margin-bottom:8px}
+  .sgrid{display:grid;grid-template-columns:1fr 1fr;gap:0 26px;margin:12px 0;border-top:1px solid var(--line2)}
+  @media(max-width:560px){.sgrid{grid-template-columns:1fr}}
+  .export{margin-top:14px;display:flex;gap:9px}
+  .btn-o{background:#fff;border:1px solid var(--line);border-radius:var(--r-sm);padding:9px 14px;font-size:12.5px;font-weight:600;color:var(--ink);cursor:pointer;font-family:var(--sans);display:flex;align-items:center;gap:7px;transition:.15s}
+  .btn-o:hover{border-color:var(--orange);color:var(--orange-ink)}
+  footer{max-width:1240px;margin:0 auto;padding:8px 26px 40px;color:var(--faint);font-size:11px;display:flex;justify-content:space-between;flex-wrap:wrap;gap:8px}
+  .spin{display:inline-block;width:13px;height:13px;border:2px solid rgba(255,255,255,.4);border-top-color:#fff;border-radius:50%;animation:sp .7s linear infinite;vertical-align:-1px;margin-right:7px}
+  @keyframes sp{to{transform:rotate(360deg)}}
+</style>
+</head>
+<body>
+<header>
+  <svg class="tmark" viewBox="0 0 100 100" aria-hidden="true"><rect width="100" height="100" rx="16" fill="#F15A24"/><polygon points="22,26 80,26 70,44 22,44" fill="#fff"/><polygon points="44,40 60,40 57,80 47,80" fill="#fff"/></svg>
+  <div class="brand">TREDENCE<span class="sub">Data Science & AI Engineering</span></div>
+  <div class="prod">GeoSBC <em>·</em> Soil Report Review & SBC Automation</div>
+  <div class="htags">
+    <span class="pill proto">Prototype</span>
+    <span class="pill dbx">Built on Databricks</span>
+  </div>
+</header>
+
+<div class="rail" id="rail">
+  <div class="stage" data-st="0"><div class="dot">1</div><div class="lbl">Ingestion<span>PDF → catalog</span></div><div class="bar"></div></div>
+  <div class="stage" data-st="1"><div class="dot">2</div><div class="lbl">AI extraction<span>Parameters</span></div><div class="bar"></div></div>
+  <div class="stage" data-st="2"><div class="dot">3</div><div class="lbl">Validation<span>Consistency</span></div><div class="bar"></div></div>
+  <div class="stage" data-st="3"><div class="dot">4</div><div class="lbl">Calc engine<span>SBC · IS codes</span></div><div class="bar"></div></div>
+  <div class="stage" data-st="4"><div class="dot">5</div><div class="lbl">Review & rec.<span>Foundation</span></div><div class="bar"></div></div>
+  <div class="stage" data-st="5"><div class="dot">6</div><div class="lbl">Summary<span>One-pager</span></div></div>
+</div>
+
+<main>
+  <aside class="panel">
+    <p class="eyebrow">Input</p>
+    <h2 class="sec">Soil investigation report</h2>
+    <p class="meta">Drop a report, or load the bundled sample.</p>
+    <div id="dropArea">
+      <div class="drop" id="drop">
+        <div class="dt">Drop soil report PDF</div>
+        <div class="ds">or click to load the DN&nbsp;142 sample</div>
+      </div>
+    </div>
+    <div id="siteMeta"></div>
+
+    <div class="field-label">Founding depth (m)</div>
+    <div class="seg" id="depthSeg">
+      <button data-i="0">1.0</button>
+      <button data-i="1">2.0</button>
+      <button data-i="2" class="on">2.475</button>
+      <button data-i="3">3.0</button>
+      <button data-i="4">4.0</button>
+    </div>
+
+    <button class="run" id="runBtn" disabled>Run review</button>
+    <p class="hint" id="hint">Load a report to begin. In this prototype the deterministic SBC engine is fully live and reproduces the report's published values; AI extraction is shown illustratively.</p>
+  </aside>
+
+  <section class="results" id="results">
+    <div class="empty" id="emptyState">
+      <div class="big">No report loaded</div>
+      <div>Load the DN&nbsp;142 sample on the left and run the review to see the pipeline in action.</div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <span>Tredence · GeoSBC prototype · illustrative only — not for engineering sign-off</span>
+  <span>Sample: 300 MW Koppal Wind Project, DN 142</span>
+</footer>
+
+<script>
+const REPORT = {
+  id:"DN-142", project:"300 MW Koppal Wind Project",
+  client:"Serentica Renewables India Pvt. Ltd", location:"DN 142, Bukkanhatti Village, Karnataka",
+  structure:"Wind turbine tower (raft)", seismic:"Zone II (IS 1893:2002)", gwt:"Not encountered to 10 m",
+  strata:"Gravels (GP) 0–4.5 m · Hard rock 4.5–10 m",
+  extracted:[
+    {l:"Cohesion (c)", v:"0", u:"kPa", c:.99, p:"p.32"},
+    {l:"Friction angle (φ)", v:"34.38", u:"°", c:.97, p:"p.27"},
+    {l:"Bulk unit weight (γ)", v:"1.99", u:"t/m³", c:.98, p:"p.20"},
+    {l:"SPT-N @ 2.475 m", v:"53", u:"", c:.99, p:"p.13"},
+    {l:"Founding stratum", v:"Gravels", u:"GP", c:.96, p:"p.13"},
+    {l:"Ground water table", v:"None", u:"to 10 m", c:.95, p:"p.8"},
+    {l:"Rock UCS", v:"42", u:"MPa", c:.93, p:"p.46"},
+    {l:"RQD", v:"60", u:"%", c:.94, p:"p.46"},
+    {l:"Poisson ratio (static)", v:"0.24", u:"", c:.90, p:"p.20"},
+    {l:"Dyn. shear modulus G′", v:"1171", u:"MPa", c:.88, p:"p.25"}
+  ],
+  flags:[
+    {t:"warn", h:"Termination depth conflict", d:"Bore-log footer states 15 m; the bore log and summary state 10 m.", p:"p.13"},
+    {t:"warn", h:"Stratum boundary mismatch", d:"Sieve analysis infers gravels to 4.0 m; bore log records the gravel/rock boundary at 4.5 m.", p:"p.13 · p.29"},
+    {t:"ok", h:"Friction angle reconciled", d:"φ derived from direct-shear divisions (34.38°) matches the stated value.", p:"p.31"},
+    {t:"ok", h:"SPT-N trend consistent", d:"Blow counts increase monotonically with depth (50 → 56).", p:"p.13"},
+    {t:"ok", h:"Water-table correction applied", d:"Submerged condition handled via W′ = 0.5 in the bearing-capacity calc.", p:"p.33"}
+  ],
+  // per-depth inputs used by the live deterministic engine (IS 6403 intermediate shear + IS 8009 settlement)
+  layers:[
+    {D:1.0, g:1.98, phi:33.93, Nq:19.475, Ng:25.136, q:0.98, dq:1.009, dg:1.009, N:50},
+    {D:2.0, g:1.98, phi:34.16, Nq:19.986, Ng:26.004, q:1.96, dq:1.019, dg:1.019, N:52},
+    {D:2.475, g:1.99, phi:34.38, Nq:20.489, Ng:26.866, q:2.45, dq:1.023, dg:1.023, N:53},
+    {D:3.0, g:1.99, phi:34.61, Nq:21.032, Ng:27.801, q:2.97, dq:1.029, dg:1.029, N:54},
+    {D:4.0, g:1.99, phi:34.83, Nq:21.567, Ng:28.729, q:3.96, dq:1.038, dg:1.038, N:56}
+  ]
+};
+// constants matching the report
+const B=20, W=0.5, Sq=1.2, Sg=0.6, FoS=3, Rw=0.5, Sp=6;
+
+function shearSBC(r){
+  const qult = r.q*(r.Nq-1)*Sq*r.dq + 0.5*B*r.g*r.Ng*Sg*r.dg*W;
+  return {qult:qult, qna:qult/FoS};
+}
+function settleSBC(r){
+  const Cd = 1 + r.D/B;
+  return 0.7*(r.N-3)*Rw*Cd*Sp;
+}
+
+let loaded=false, ran=false, depthIdx=2, running=false;
+const $=s=>document.querySelector(s), $$=s=>document.querySelectorAll(s);
+
+// ---- load report ----
+function loadReport(){
+  if(loaded) return;
+  loaded=true;
+  $("#dropArea").innerHTML = `<div class="loaded">
+      <div class="fi">PDF</div>
+      <div><div class="fn">Report_DN_142.pdf</div><div class="fm">2.4 MB · 50 pages · ingested to Unity Catalog</div></div>
+    </div>`;
+  $("#siteMeta").innerHTML = `
+    <div style="margin-top:16px">
+      <div class="kv"><span>Project</span><b>${REPORT.project}</b></div>
+      <div class="kv"><span>Client</span><b>Serentica Renewables</b></div>
+      <div class="kv"><span>Structure</span><b>${REPORT.structure}</b></div>
+      <div class="kv"><span>Seismic</span><b>${REPORT.seismic}</b></div>
+    </div>`;
+  $("#runBtn").disabled=false;
+  $("#hint").textContent="Ready. Run the review to step through extraction, validation, the deterministic SBC engine, and the recommendation.";
+}
+$("#drop").addEventListener("click", loadReport);
+["dragover","drop"].forEach(e=>$("#drop").addEventListener(e,ev=>{ev.preventDefault(); if(e==="drop") loadReport();}));
+
+// ---- depth control ----
+$$("#depthSeg button").forEach(b=>b.addEventListener("click",()=>{
+  $$("#depthSeg button").forEach(x=>x.classList.remove("on"));
+  b.classList.add("on"); depthIdx=+b.dataset.i;
+  if(ran) renderEngine(); // live recompute
+}));
+
+// ---- run pipeline ----
+$("#runBtn").addEventListener("click",()=>{
+  if(running||!loaded) return;
+  running=true; ran=true;
+  $("#runBtn").innerHTML='<span class="spin"></span>Reviewing…'; $("#runBtn").disabled=true;
+  $("#emptyState")?.remove();
+  $("#results").innerHTML =
+    blockHTML(2,"AI parameter extraction","Schema-driven extraction from the parsed report, with per-field confidence and source citations.","ext") +
+    blockHTML(3,"Validation & consistency","Automated engineering sanity and cross-reference checks before any computation.","val") +
+    blockHTML(4,"Bearing-capacity engine","Deterministic IS-code computation — recomputed live from the extracted parameters.","eng") +
+    blockHTML(5,"Foundation recommendation","Governing SBC mapped to the standardized foundation design class.","rec") +
+    blockHTML(6,"One-page engineering summary","Auto-generated, citation-backed draft for engineer review and sign-off.","sum");
+  renderExtraction(); renderValidation(); renderEngine(); renderReco(); renderSummary();
+
+  const order=[0,1,2,3,4,5], secs=["ext","val","val","eng","rec","sum"];
+  let i=0;
+  const tick=()=>{
+    $$(".stage").forEach((s,idx)=>{ s.classList.toggle("active", idx===order[i]); if(idx<order[i]) s.classList.add("done"); });
+    if(i>=1){ const id=["","ext","val","eng","rec","sum"][i]; const el=document.getElementById("b-"+id); if(el) el.classList.add("show"); }
+    i++;
+    if(i<=5){ setTimeout(tick, i===1?350:620); }
+    else{
+      $$(".stage").forEach(s=>{s.classList.add("done");s.classList.remove("active");});
+      running=false; $("#runBtn").innerHTML="Re-run review"; $("#runBtn").disabled=false;
+    }
+  };
+  tick();
+});
+
+function blockHTML(n,title,desc,id){
+  return `<div class="block" id="b-${id}">
+    <h3><span class="n">${n}</span>${title}</h3>
+    <div class="desc">${desc}</div>
+    <div id="c-${id}"></div></div>`;
+}
+
+function renderExtraction(){
+  $("#c-ext").innerHTML = `<div class="pgrid">${REPORT.extracted.map(p=>`
+    <div class="pcard">
+      <div class="pl"><span>${p.l}</span><span class="conf ${p.c>=.92?'hi':'md'}">${Math.round(p.c*100)}%</span></div>
+      <div class="pv">${p.v} <small>${p.u}</small></div>
+      <div class="cite">source ${p.p}</div>
+    </div>`).join("")}</div>
+    <div class="hint" style="margin-top:13px">Illustrative extraction. In production this is <b>ai_parse_document</b> + an Agent Bricks extraction agent; low-confidence fields route to manual review.</div>`;
+}
+function renderValidation(){
+  $("#c-val").innerHTML = REPORT.flags.map(f=>`
+    <div class="flag ${f.t}">
+      <div class="ic">${f.t==='warn'?'!':'✓'}</div>
+      <div><div class="ft">${f.h}</div><div class="fd">${f.d}</div><div class="fp">${f.p}</div></div>
+    </div>`).join("");
+}
+function renderEngine(){
+  const r=REPORT.layers[depthIdx];
+  const sh=shearSBC(r), shVal=sh.qna, stVal=settleSBC(r);
+  const gov=Math.min(shVal,stVal), govShear=shVal<=stVal;
+  const max=Math.max(shVal,stVal);
+  $("#c-eng").innerHTML=`
+    <div class="sbcwrap">
+      <div class="stat ${govShear?'gov':''}">
+        ${govShear?'<span class="govtag">GOVERNS</span>':''}
+        <div class="sl">Shear criterion · IS 6403</div>
+        <div class="sv">${shVal.toFixed(2)} <small>t/m²</small></div>
+        <div class="sm">Intermediate shear failure · q<sub>ult</sub> = ${sh.qult.toFixed(1)} t/m², FoS 3</div>
+      </div>
+      <div class="stat ${!govShear?'gov':''}">
+        ${!govShear?'<span class="govtag">GOVERNS</span>':''}
+        <div class="sl">Settlement · 60 mm · IS 8009</div>
+        <div class="sv">${stVal.toFixed(2)} <small>t/m²</small></div>
+        <div class="sm">SPT-N = ${r.N} · C<sub>d</sub> = ${(1+r.D/B).toFixed(3)} · R′<sub>w</sub> = 0.5</div>
+      </div>
+    </div>
+    <div class="barcmp">
+      <div class="barrow"><div class="bl">Shear</div><div class="bt"><div class="bf" style="width:${shVal/max*100}%;background:${govShear?'#F15A24':'#252B4A'}"></div></div><div class="bv">${shVal.toFixed(2)}</div></div>
+      <div class="barrow"><div class="bl">Settlement</div><div class="bt"><div class="bf" style="width:${stVal/max*100}%;background:${!govShear?'#F15A24':'#252B4A'}"></div></div><div class="bv">${stVal.toFixed(2)}</div></div>
+    </div>
+    <div class="hint" style="margin-top:6px">Governing safe bearing capacity at <b>${r.D} m</b> = <b>${gov.toFixed(2)} t/m²</b> (the lesser criterion). Reproduces the report's published value.</div>
+    <details class="formula"><summary>Show calculation</summary>
+      <div class="fx">q_ult = q·(N''q − 1)·Sq·dq  +  0.5·B·γ·N''γ·Sγ·dγ·W'
+     = ${r.q}·(${r.Nq} − 1)·${Sq}·${r.dq}
+     + 0.5·${B}·${r.g}·${r.Ng}·${Sg}·${r.dg}·${W}
+     = ${sh.qult.toFixed(2)} t/m²
+q_na (shear) = q_ult / ${FoS} = ${shVal.toFixed(2)} t/m²
+
+q_na (settlement) = 0.7·(N−3)·R'w·Cd·Sp
+     = 0.7·(${r.N}−3)·${Rw}·${(1+r.D/B).toFixed(4)}·${Sp}
+     = ${stVal.toFixed(2)} t/m²</div>
+    </details>`;
+}
+function renderReco(){
+  const r=REPORT.layers[depthIdx];
+  const gov=Math.min(shearSBC(r).qna, settleSBC(r));
+  let cls, chips;
+  if(gov>=40){ cls="20 & 40"; chips=`<span class="chip">Supports 20 SBC class</span><span class="chip">Supports 40 SBC class</span>`; }
+  else if(gov>=20){ cls="20"; chips=`<span class="chip">Supports 20 SBC class</span><span class="chip alt">Below 40 SBC class</span>`; }
+  else { cls="—"; chips=`<span class="chip alt">Ground improvement recommended</span>`; }
+  $("#c-rec").innerHTML=`
+    <div class="reco">
+      <div class="badge">${cls}<span>SBC CLASS</span></div>
+      <div>
+        <div class="rt">Raft foundation at ${r.D} m founding depth</div>
+        <div class="rd">Governing SBC of ${gov.toFixed(2)} t/m² ${gov>=40?'comfortably clears both standardized wind-turbine foundation design classes':'meets the 20 SBC design class'}. Sound, dry gravel over hard rock; no water-table influence within the test zone.</div>
+        <div class="chips">${chips}</div>
+        <div class="hint" style="margin-top:11px">Dynamic rotational stiffness (rocking mode) is available from the report for the WTG natural-frequency (1P/3P resonance) check — flagged for the structural engineer.</div>
+      </div>
+    </div>`;
+}
+function renderSummary(){
+  const r=REPORT.layers[depthIdx];
+  const sh=shearSBC(r).qna, st=settleSBC(r), gov=Math.min(sh,st);
+  $("#c-sum").innerHTML=`
+    <div class="summary">
+      <div class="stitle">${REPORT.project} — foundation review</div>
+      A single exploratory borehole to 10 m encountered sound gravels (GP) over hard rock at 4.5 m,
+      with no ground water within the investigated depth. At a founding depth of <b>${r.D} m</b>, the safe
+      bearing capacity is governed by the <b>${sh<=st?'shear':'settlement'}</b> criterion at
+      <b>${gov.toFixed(2)} t/m²</b>. A <b>raft foundation</b> is recommended; the site clears the
+      ${gov>=40?'20 and 40':'20'} SBC standardized design class. Two source-document inconsistencies were
+      flagged for confirmation prior to sign-off.
+      <div class="sgrid">
+        <div class="kv"><span>Founding depth</span><b>${r.D} m</b></div>
+        <div class="kv"><span>Governing SBC</span><b>${gov.toFixed(2)} t/m²</b></div>
+        <div class="kv"><span>SBC (shear)</span><b>${sh.toFixed(2)} t/m²</b></div>
+        <div class="kv"><span>SBC (settlement)</span><b>${st.toFixed(2)} t/m²</b></div>
+        <div class="kv"><span>Foundation</span><b>Raft</b></div>
+        <div class="kv"><span>Open flags</span><b>2 to confirm</b></div>
+      </div>
+      <div class="export">
+        <button class="btn-o" onclick="alert('Prototype: would export a citation-backed one-page PDF and write results to the Genie-queryable Delta tables.')">⬇ Export one-pager</button>
+        <button class="btn-o" onclick="alert('Prototype: routes the reviewed draft to the engineer queue for sign-off (human-in-the-loop gate).')">↗ Send to reviewer</button>
+      </div>
+    </div>`;
+}
+</script>
+</body>
+</html>

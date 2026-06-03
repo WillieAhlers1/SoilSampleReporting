@@ -1,0 +1,748 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>GeoSBC · Soil Report Review & SBC Automation</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Sora:wght@500;600;700&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --navy:#0D0F1E; --navy2:#1A1F38; --navy3:#252B4A;
+    --orange:#F15A24; --orange-soft:#FCE3DA; --orange-ink:#B5350F;
+    --ink:#1C1C2E; --mute:#6A6E7E; --faint:#9498A8;
+    --line:#E4E6EF; --line2:#EEF0F6; --bg:#F4F5F8; --card:#FFFFFF;
+    --green:#1D9E75; --green-bg:#E1F5EE; --amber:#BA7517; --amber-bg:#FAEEDA; --red:#C0392B; --red-bg:#FBEAEA;
+    --sora:'Sora',sans-serif; --sans:'IBM Plex Sans',sans-serif; --mono:'IBM Plex Mono',monospace;
+    --r:12px; --r-sm:8px;
+  }
+  *{box-sizing:border-box}
+  html,body{margin:0;padding:0}
+  body{
+    font-family:var(--sans); color:var(--ink); background:var(--bg);
+    background-image:linear-gradient(var(--line2) 1px,transparent 1px),linear-gradient(90deg,var(--line2) 1px,transparent 1px);
+    background-size:34px 34px; background-position:-1px -1px;
+    -webkit-font-smoothing:antialiased; line-height:1.5;
+  }
+  /* Header */
+  header{background:var(--navy); color:#fff; padding:14px 26px; display:flex; align-items:center; gap:14px;
+    border-bottom:3px solid var(--orange)}
+  .tmark{width:34px;height:34px;border-radius:8px;flex:0 0 auto}
+  .brand{font-family:var(--sora);font-weight:700;letter-spacing:.06em;font-size:15px}
+  .brand .sub{display:block;font-family:var(--sans);font-weight:400;letter-spacing:.02em;font-size:11px;color:#AEB2C4;margin-top:1px}
+  .prod{font-family:var(--sora);font-weight:600;font-size:15px;margin-left:6px;padding-left:16px;border-left:1px solid #333958;color:#fff}
+  .prod em{color:var(--orange);font-style:normal}
+  .htags{margin-left:auto;display:flex;align-items:center;gap:10px}
+  .pill{font-family:var(--mono);font-size:10.5px;letter-spacing:.08em;text-transform:uppercase;padding:5px 10px;border-radius:999px}
+  .pill.proto{background:var(--orange);color:#fff;font-weight:600}
+  .pill.dbx{background:#20264a;color:#C4C8D4;border:1px solid #333958}
+  /* Status banner */
+  .banner{padding:10px 26px;font-size:12.5px;display:flex;align-items:center;gap:10px;border-bottom:1px solid}
+  .banner.warn{background:var(--amber-bg);color:var(--amber);border-color:var(--amber)}
+  .banner.error{background:var(--red-bg);color:var(--red);border-color:var(--red)}
+  .banner.info{background:#E8F4FF;color:#0066CC;border-color:#99CCFF}
+  .banner button{margin-left:auto;background:none;border:none;cursor:pointer;font-size:18px;color:inherit;line-height:1;padding:0 4px}
+  /* Pipeline rail */
+  .rail{background:#fff;border-bottom:1px solid var(--line);padding:14px 26px;display:flex;gap:6px;overflow-x:auto}
+  .stage{display:flex;align-items:center;gap:10px;padding:6px 8px;flex:1 1 0;min-width:150px;opacity:.5;transition:opacity .4s}
+  .stage.active,.stage.done{opacity:1}
+  .stage .dot{width:26px;height:26px;border-radius:50%;flex:0 0 auto;display:grid;place-items:center;
+    font-family:var(--mono);font-weight:600;font-size:12px;background:var(--line);color:var(--mute);transition:.35s}
+  .stage.active .dot{background:var(--orange);color:#fff;box-shadow:0 0 0 4px var(--orange-soft)}
+  .stage.done .dot{background:var(--navy);color:#fff}
+  .stage .lbl{font-size:12.5px;font-weight:600;color:var(--ink);line-height:1.2}
+  .stage .lbl span{display:block;font-weight:400;font-size:10.5px;color:var(--faint)}
+  .stage .bar{flex:1;height:2px;background:var(--line);min-width:8px}
+  /* Layout */
+  main{max-width:1240px;margin:0 auto;padding:26px;display:grid;grid-template-columns:320px 1fr;gap:22px;align-items:start}
+  @media(max-width:900px){main{grid-template-columns:1fr}}
+  .panel{background:var(--card);border:1px solid var(--line);border-radius:var(--r);padding:20px;position:sticky;top:18px}
+  @media(max-width:900px){.panel{position:static}}
+  .eyebrow{font-family:var(--mono);font-size:10.5px;letter-spacing:.14em;text-transform:uppercase;color:var(--orange);font-weight:600;margin:0 0 10px}
+  h2.sec{font-family:var(--sora);font-size:17px;font-weight:600;margin:0 0 4px}
+  .meta{font-size:12px;color:var(--mute);margin:0 0 16px}
+  /* Drop zone */
+  .drop{border:1.5px dashed var(--line);border-radius:var(--r-sm);padding:16px;text-align:center;background:var(--bg);cursor:pointer;transition:.2s}
+  .drop:hover{border-color:var(--orange);background:#fff}
+  .drop.drag-over{border-color:var(--orange);background:var(--orange-soft);border-style:solid}
+  .drop.loading{cursor:default;pointer-events:none;opacity:.8}
+  .drop .dt{font-weight:600;font-size:13px}
+  .drop .ds{font-size:11.5px;color:var(--faint);margin-top:3px}
+  .load-sample-link{color:var(--orange);font-weight:600;text-decoration:none;cursor:pointer;border-bottom:1px dashed var(--orange-soft)}
+  .load-sample-link:hover{border-color:var(--orange)}
+  .loaded{display:flex;align-items:center;gap:10px;border:1px solid var(--line);border-radius:var(--r-sm);padding:11px 13px;background:#fff}
+  .loaded .fi{width:30px;height:30px;border-radius:7px;background:var(--orange-soft);color:var(--orange-ink);display:grid;place-items:center;font-family:var(--mono);font-weight:600;font-size:11px;flex:0 0 auto}
+  .loaded .fn{font-weight:600;font-size:13px;line-height:1.2}
+  .loaded .fm{font-size:11px;color:var(--faint)}
+  .kv{display:flex;justify-content:space-between;gap:10px;padding:7px 0;border-bottom:1px solid var(--line2);font-size:12.5px}
+  .kv:last-child{border-bottom:none}
+  .kv span{color:var(--mute)} .kv b{font-weight:600;text-align:right}
+  .field-label{font-size:11px;font-weight:600;letter-spacing:.04em;text-transform:uppercase;color:var(--faint);margin:18px 0 8px}
+  .seg{display:flex;border:1px solid var(--line);border-radius:var(--r-sm);overflow:hidden}
+  .seg button{flex:1;border:none;background:#fff;padding:9px 4px;font-family:var(--mono);font-size:12.5px;font-weight:500;color:var(--mute);cursor:pointer;border-right:1px solid var(--line);transition:.15s}
+  .seg button:last-child{border-right:none}
+  .seg button.on{background:var(--navy);color:#fff}
+  .seg button:not(.on):hover{background:var(--bg)}
+  .run{width:100%;margin-top:18px;background:var(--orange);color:#fff;border:none;border-radius:var(--r-sm);padding:13px;font-family:var(--sora);font-weight:600;font-size:14px;cursor:pointer;transition:.15s}
+  .run:hover{background:#d94c1b}
+  .run:disabled{background:var(--line);color:var(--faint);cursor:default}
+  .hint{font-size:11px;color:var(--faint);margin-top:10px;line-height:1.45}
+  /* Results */
+  .results{display:flex;flex-direction:column;gap:18px}
+  .empty{background:var(--card);border:1px dashed var(--line);border-radius:var(--r);padding:60px 30px;text-align:center;color:var(--faint)}
+  .empty .big{font-family:var(--sora);font-size:18px;color:var(--mute);margin-bottom:6px}
+  .block{background:var(--card);border:1px solid var(--line);border-radius:var(--r);padding:20px 22px;opacity:0;transform:translateY(10px);transition:opacity .5s,transform .5s}
+  .block.show{opacity:1;transform:none}
+  .block h3{font-family:var(--sora);font-size:15px;font-weight:600;margin:0;display:flex;align-items:center;gap:9px}
+  .block h3 .n{width:22px;height:22px;border-radius:6px;background:var(--navy);color:#fff;display:grid;place-items:center;font-family:var(--mono);font-size:11px;font-weight:600}
+  .block .desc{font-size:12px;color:var(--mute);margin:3px 0 16px 31px}
+  /* Extraction grid */
+  .pgrid{display:grid;grid-template-columns:repeat(2,1fr);gap:10px}
+  @media(max-width:560px){.pgrid{grid-template-columns:1fr}}
+  .pcard{border:1px solid var(--line);border-radius:var(--r-sm);padding:11px 13px}
+  .pcard .pl{font-size:11px;color:var(--mute);display:flex;justify-content:space-between;align-items:center}
+  .pcard .pv{font-family:var(--mono);font-weight:600;font-size:16px;margin-top:3px}
+  .pcard .pv small{font-family:var(--sans);font-weight:500;font-size:11px;color:var(--faint)}
+  .cite{font-family:var(--mono);font-size:9.5px;color:var(--faint);margin-top:5px}
+  .conf{font-family:var(--mono);font-size:9.5px;padding:2px 6px;border-radius:999px;font-weight:600}
+  .conf.hi{background:var(--green-bg);color:var(--green)} .conf.md{background:var(--amber-bg);color:var(--amber)}
+  /* Flags */
+  .flag{display:flex;gap:11px;padding:11px 0;border-bottom:1px solid var(--line2)}
+  .flag:last-child{border-bottom:none}
+  .flag .ic{width:22px;height:22px;border-radius:6px;flex:0 0 auto;display:grid;place-items:center;font-weight:700;font-size:12px;font-family:var(--mono)}
+  .flag.warn .ic{background:var(--amber-bg);color:var(--amber)} .flag.ok .ic{background:var(--green-bg);color:var(--green)}
+  .flag .ft{font-weight:600;font-size:13px} .flag .fd{font-size:12px;color:var(--mute);margin-top:1px}
+  .flag .fp{font-family:var(--mono);font-size:9.5px;color:var(--faint);margin-top:3px}
+  /* SBC */
+  .sbcwrap{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+  @media(max-width:560px){.sbcwrap{grid-template-columns:1fr}}
+  .stat{border:1px solid var(--line);border-radius:var(--r-sm);padding:15px;position:relative;overflow:hidden}
+  .stat.gov{background:var(--navy);border-color:var(--navy)}
+  .stat .sl{font-size:11px;font-weight:600;letter-spacing:.03em;text-transform:uppercase;color:var(--faint)}
+  .stat.gov .sl{color:#9aa0bd}
+  .stat .sv{font-family:var(--mono);font-weight:600;font-size:34px;letter-spacing:-.02em;margin-top:6px;line-height:1}
+  .stat .sv small{font-size:14px;color:var(--orange);font-weight:600}
+  .stat.gov .sv{color:#fff}
+  .stat .sm{font-size:11px;color:var(--mute);margin-top:6px} .stat.gov .sm{color:#9aa0bd}
+  .govtag{position:absolute;top:11px;right:11px;font-family:var(--mono);font-size:9px;letter-spacing:.1em;background:var(--orange);color:#fff;padding:3px 7px;border-radius:999px;font-weight:600}
+  .barcmp{margin-top:16px}
+  .barrow{display:flex;align-items:center;gap:10px;margin-bottom:9px;font-size:11.5px}
+  .barrow .bl{width:78px;color:var(--mute);flex:0 0 auto}
+  .barrow .bt{flex:1;height:18px;background:var(--bg);border-radius:5px;overflow:hidden}
+  .barrow .bf{height:100%;border-radius:5px;transition:width .6s cubic-bezier(.2,.7,.2,1)}
+  .barrow .bv{width:66px;text-align:right;font-family:var(--mono);font-weight:600;flex:0 0 auto}
+  details.formula{margin-top:14px;border-top:1px solid var(--line2);padding-top:12px}
+  details.formula summary{cursor:pointer;font-size:12px;color:var(--orange);font-weight:600;font-family:var(--mono)}
+  details.formula .fx{font-family:var(--mono);font-size:11.5px;color:var(--mute);background:var(--bg);border-radius:var(--r-sm);padding:12px;margin-top:10px;line-height:1.7;white-space:pre-wrap}
+  /* Recommendation */
+  .reco{display:flex;gap:14px;align-items:flex-start}
+  .reco .badge{flex:0 0 auto;width:74px;height:74px;border-radius:var(--r-sm);background:var(--orange);color:#fff;display:grid;place-items:center;text-align:center;font-family:var(--sora);font-weight:700;line-height:1.05}
+  .reco .badge span{display:block;font-family:var(--mono);font-weight:500;font-size:9px;letter-spacing:.06em;margin-top:3px;opacity:.9}
+  .reco .rt{font-family:var(--sora);font-size:16px;font-weight:600}
+  .reco .rd{font-size:12.5px;color:var(--mute);margin-top:4px}
+  .chips{display:flex;flex-wrap:wrap;gap:7px;margin-top:11px}
+  .chip{font-size:11px;font-weight:600;padding:5px 10px;border-radius:999px;background:var(--green-bg);color:var(--green)}
+  .chip.alt{background:var(--orange-soft);color:var(--orange-ink)}
+  /* Summary */
+  .summary{font-size:13px;line-height:1.65}
+  .summary .stitle{font-family:var(--sora);font-size:14px;font-weight:600;margin-bottom:8px}
+  .sgrid{display:grid;grid-template-columns:1fr 1fr;gap:0 26px;margin:12px 0;border-top:1px solid var(--line2)}
+  @media(max-width:560px){.sgrid{grid-template-columns:1fr}}
+  .export{margin-top:14px;display:flex;gap:9px;flex-wrap:wrap}
+  .btn-o{background:#fff;border:1px solid var(--line);border-radius:var(--r-sm);padding:9px 14px;font-size:12.5px;font-weight:600;color:var(--ink);cursor:pointer;font-family:var(--sans);display:flex;align-items:center;gap:7px;transition:.15s}
+  .btn-o:hover{border-color:var(--orange);color:var(--orange-ink)}
+  footer{max-width:1240px;margin:0 auto;padding:8px 26px 40px;color:var(--faint);font-size:11px;display:flex;justify-content:space-between;flex-wrap:wrap;gap:8px}
+  .spin{display:inline-block;width:13px;height:13px;border:2px solid rgba(255,255,255,.4);border-top-color:#fff;border-radius:50%;animation:sp .7s linear infinite;vertical-align:-1px;margin-right:7px}
+  @keyframes sp{to{transform:rotate(360deg)}}
+  /* Loading state in drop zone */
+  .drop-spin{display:inline-block;width:18px;height:18px;border:2px solid var(--line);border-top-color:var(--orange);border-radius:50%;animation:sp .7s linear infinite;margin-bottom:8px}
+  /* Change file button */
+  .change-btn{margin-left:auto;background:none;border:none;color:var(--faint);cursor:pointer;font-size:11px;padding:4px;font-family:var(--sans);text-decoration:underline}
+  .change-btn:hover{color:var(--orange)}
+</style>
+</head>
+<body>
+
+<header>
+  <svg class="tmark" viewBox="0 0 100 100" aria-hidden="true">
+    <rect width="100" height="100" rx="16" fill="#F15A24"/>
+    <polygon points="22,26 80,26 70,44 22,44" fill="#fff"/>
+    <polygon points="44,40 60,40 57,80 47,80" fill="#fff"/>
+  </svg>
+  <div class="brand">TREDENCE<span class="sub">Data Science & AI Engineering</span></div>
+  <div class="prod">GeoSBC <em>·</em> Soil Report Review & SBC Automation</div>
+  <div class="htags">
+    <span class="pill proto">Interactive</span>
+    <span class="pill dbx">Powered by Claude</span>
+  </div>
+</header>
+
+<!-- Status banner injected here by JS -->
+
+<div class="rail" id="rail">
+  <div class="stage" data-st="0"><div class="dot">1</div><div class="lbl">Ingestion<span>PDF → parse</span></div><div class="bar"></div></div>
+  <div class="stage" data-st="1"><div class="dot">2</div><div class="lbl">AI extraction<span>Parameters</span></div><div class="bar"></div></div>
+  <div class="stage" data-st="2"><div class="dot">3</div><div class="lbl">Validation<span>Consistency</span></div><div class="bar"></div></div>
+  <div class="stage" data-st="3"><div class="dot">4</div><div class="lbl">Calc engine<span>SBC · IS codes</span></div><div class="bar"></div></div>
+  <div class="stage" data-st="4"><div class="dot">5</div><div class="lbl">Review & rec.<span>Foundation</span></div><div class="bar"></div></div>
+  <div class="stage" data-st="5"><div class="dot">6</div><div class="lbl">Summary<span>One-pager</span></div></div>
+</div>
+
+<main>
+  <aside class="panel">
+    <p class="eyebrow">Input</p>
+    <h2 class="sec">Soil investigation report</h2>
+    <p class="meta">Upload a PDF — Claude extracts the geotechnical parameters.</p>
+
+    <!-- Hidden file input — persists across dropArea re-renders -->
+    <input type="file" id="fileInput" accept=".pdf" style="display:none">
+
+    <div id="dropArea">
+      <div class="drop" id="drop">
+        <div class="drop-spin" style="display:none" id="dropSpinner"></div>
+        <div class="dt" id="dropTitle">Drop soil report PDF</div>
+        <div class="ds" id="dropSub">or click to browse &nbsp;·&nbsp; <a class="load-sample-link" id="loadSampleBtn">load DN 142 sample</a></div>
+      </div>
+    </div>
+
+    <div id="siteMeta"></div>
+
+    <div class="field-label">Founding depth (m)</div>
+    <div class="seg" id="depthSeg">
+      <button data-i="0">1.0</button>
+      <button data-i="1">2.0</button>
+      <button data-i="2" class="on">2.475</button>
+      <button data-i="3">3.0</button>
+      <button data-i="4">4.0</button>
+    </div>
+
+    <button class="run" id="runBtn" disabled>Run review</button>
+    <p class="hint" id="hint">Upload a report or load the DN 142 sample to begin.</p>
+  </aside>
+
+  <section class="results" id="results">
+    <div class="empty" id="emptyState">
+      <div class="big">No report loaded</div>
+      <div>Upload a PDF or load the DN 142 sample on the left, then run the review to see the full AI pipeline.</div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <span>Tredence · GeoSBC · <span id="footModel">Claude-powered extraction</span></span>
+  <span id="footFile">Ready to analyse</span>
+</footer>
+
+<script>
+'use strict';
+
+// ── Sample data (DN 142 — Koppal Wind Project) ────────────────────────────────
+const SAMPLE = {
+  project:{
+    id:"DN-142", name:"300 MW Koppal Wind Project",
+    client:"Serentica Renewables India Pvt. Ltd",
+    location:"DN 142, Bukkanhatti Village, Karnataka",
+    structure:"Wind turbine tower (raft)", seismic:"Zone II (IS 1893:2002)",
+    gwt:"Not encountered to 10 m"
+  },
+  strata:"Gravels (GP) 0–4.5 m · Hard rock 4.5–10 m",
+  extracted:[
+    {l:"Cohesion (c)",           v:"0",    u:"kPa",  c:.99, p:"p.32"},
+    {l:"Friction angle (φ)",     v:"34.38",u:"°",    c:.97, p:"p.27"},
+    {l:"Bulk unit weight (γ)",   v:"1.99", u:"t/m³", c:.98, p:"p.20"},
+    {l:"SPT-N @ 2.475 m",        v:"53",   u:"",     c:.99, p:"p.13"},
+    {l:"Founding stratum",       v:"Gravels",u:"GP", c:.96, p:"p.13"},
+    {l:"Ground water table",     v:"None", u:"to 10 m",c:.95,p:"p.8"},
+    {l:"Rock UCS",               v:"42",   u:"MPa",  c:.93, p:"p.46"},
+    {l:"RQD",                    v:"60",   u:"%",    c:.94, p:"p.46"},
+    {l:"Poisson ratio (static)", v:"0.24", u:"",     c:.90, p:"p.20"},
+    {l:"Dyn. shear modulus G′",  v:"1171", u:"MPa",  c:.88, p:"p.25"}
+  ],
+  flags:[
+    {t:"warn",h:"Termination depth conflict",
+      d:"Bore-log footer states 15 m; the bore log and summary state 10 m.",p:"p.13"},
+    {t:"warn",h:"Stratum boundary mismatch",
+      d:"Sieve analysis infers gravels to 4.0 m; bore log records the gravel/rock boundary at 4.5 m.",p:"p.13 · p.29"},
+    {t:"ok",  h:"Friction angle reconciled",
+      d:"φ derived from direct-shear divisions (34.38°) matches the stated value.",p:"p.31"},
+    {t:"ok",  h:"SPT-N trend consistent",
+      d:"Blow counts increase monotonically with depth (50 → 56).",p:"p.13"},
+    {t:"ok",  h:"Water-table correction applied",
+      d:"Submerged condition handled via W′ = 0.5 in the bearing-capacity calc.",p:"p.33"}
+  ],
+  layers:[
+    {D:1.0,  g:1.98,phi:33.93,Nq:19.475,Ng:25.136,q:0.98,dq:1.009,dg:1.009,N:50},
+    {D:2.0,  g:1.98,phi:34.16,Nq:19.986,Ng:26.004,q:1.96,dq:1.019,dg:1.019,N:52},
+    {D:2.475,g:1.99,phi:34.38,Nq:20.489,Ng:26.866,q:2.45,dq:1.023,dg:1.023,N:53},
+    {D:3.0,  g:1.99,phi:34.61,Nq:21.032,Ng:27.801,q:2.97,dq:1.029,dg:1.029,N:54},
+    {D:4.0,  g:1.99,phi:34.83,Nq:21.567,Ng:28.729,q:3.96,dq:1.038,dg:1.038,N:56}
+  ]
+};
+
+// ── IS 6403 / IS 8009 Calculation Engine (local — matches server) ─────────────
+const C = {B:20,W:0.5,Sq:1.2,Sg:0.6,FoS:3,Rw:0.5,Sp:6};
+function shearSBC(r){
+  const q=r.q*(r.Nq-1)*C.Sq*r.dq+0.5*C.B*r.g*r.Ng*C.Sg*r.dg*C.W;
+  return{qult:q,qna:q/C.FoS};
+}
+function settleSBC(r){ return 0.7*(r.N-3)*C.Rw*(1+r.D/C.B)*C.Sp; }
+
+// ── App state ─────────────────────────────────────────────────────────────────
+let G = { data:null, fileInfo:null, depthIdx:2, loaded:false, ran:false, running:false, modelName:'claude-3-5-sonnet' };
+
+// ── DOM helpers ───────────────────────────────────────────────────────────────
+const $  = id  => document.getElementById(id);
+const $$ = sel => document.querySelectorAll(sel);
+
+// ── Init ──────────────────────────────────────────────────────────────────────
+document.addEventListener('DOMContentLoaded', async () => {
+  setupFileInput();
+  setupDropZone();
+  setupRunButton();
+  await checkStatus();
+});
+
+async function checkStatus() {
+  try {
+    const s = await fetch('/api/status').then(r => r.json());
+    G.modelName = s.model || G.modelName;
+    $('footModel').textContent = s.model || G.modelName;
+    if (!s.hasApiKey) {
+      showBanner('ANTHROPIC_API_KEY is not configured. Add it to <code>.env.local</code> and restart the server. You can still use the built-in DN 142 sample.', 'warn');
+    }
+  } catch {
+    // Server offline — shouldn't happen as we're served by it
+  }
+}
+
+// ── File input (persists, never replaced) ─────────────────────────────────────
+function setupFileInput() {
+  $('fileInput').addEventListener('change', e => {
+    const f = e.target.files[0];
+    e.target.value = '';
+    if (f) uploadAndExtract(f);
+  });
+}
+
+// ── Drop zone ─────────────────────────────────────────────────────────────────
+function setupDropZone() {
+  const drop = $('drop');
+  if (!drop) return;
+
+  drop.addEventListener('click', () => $('fileInput').click());
+
+  drop.addEventListener('dragover', e => { e.preventDefault(); drop.classList.add('drag-over'); });
+  drop.addEventListener('dragleave', ()  => drop.classList.remove('drag-over'));
+  drop.addEventListener('drop', e => {
+    e.preventDefault();
+    drop.classList.remove('drag-over');
+    const f = e.dataTransfer.files[0];
+    if (f) uploadAndExtract(f);
+  });
+
+  const sampleBtn = $('loadSampleBtn');
+  if (sampleBtn) sampleBtn.addEventListener('click', e => { e.stopPropagation(); loadSample(); });
+}
+
+// ── Upload & extract ──────────────────────────────────────────────────────────
+async function uploadAndExtract(file) {
+  if (!file.name.toLowerCase().endsWith('.pdf')) {
+    showBanner('Please select a PDF file.', 'error');
+    return;
+  }
+
+  setDropState('loading', `Uploading ${escHtml(file.name)}…`, 'Sending to Claude for extraction…');
+
+  const fd = new FormData();
+  fd.append('report', file);
+
+  try {
+    const res = await fetch('/api/extract', { method:'POST', body:fd });
+    const json = await res.json();
+    if (!res.ok) throw new Error(json.error || `Server error ${res.status}`);
+
+    G.data     = json.data;
+    G.fileInfo = { name:json.fileName, size:json.fileSize, pages:json.pageCount };
+    G.depthIdx = defaultDepthIdx();
+    onDataLoaded();
+  } catch (err) {
+    setDropState('error', '⚠ Extraction failed', escHtml(err.message));
+    showBanner('Extraction failed: ' + escHtml(err.message) + ' — You can still load the sample data.', 'error');
+  }
+}
+
+function loadSample() {
+  G.data     = JSON.parse(JSON.stringify(SAMPLE));
+  G.fileInfo = { name:'Report_DN_142.pdf', size:'2.4', pages:50 };
+  G.depthIdx = 2;
+  onDataLoaded();
+  showBanner('Sample data loaded (DN 142 · Koppal Wind Project). Click "Run review" to start the pipeline.', 'info');
+}
+
+// ── Data loaded → update sidebar ──────────────────────────────────────────────
+function onDataLoaded() {
+  G.loaded = true;
+  renderFileCard();
+  renderProjectMeta();
+  buildDepthButtons();
+  $('runBtn').disabled = false;
+  $('hint').textContent = 'Ready. Click "Run review" to step through the full pipeline.';
+  $('footFile').textContent = G.fileInfo.name + ' · ' + G.fileInfo.pages + ' pages';
+}
+
+// ── Drop zone state helpers ───────────────────────────────────────────────────
+function setDropState(state, title, sub) {
+  const drop = $('drop');
+  if (!drop) return;
+  const sp = $('dropSpinner');
+  const t  = $('dropTitle');
+  const s  = $('dropSub');
+  if (state === 'loading') {
+    drop.classList.add('loading');
+    if (sp) sp.style.display = 'inline-block';
+    if (t)  t.innerHTML = title;
+    if (s)  s.innerHTML = sub;
+  } else if (state === 'error') {
+    drop.classList.remove('loading');
+    if (sp) sp.style.display = 'none';
+    if (t)  { t.innerHTML = title; t.style.color = 'var(--red)'; }
+    if (s)  s.innerHTML = sub + ' · <a class="load-sample-link" id="loadSampleBtn">load sample</a>';
+    const lb = $('loadSampleBtn');
+    if (lb) lb.addEventListener('click', e => { e.stopPropagation(); loadSample(); });
+  }
+}
+
+function renderFileCard() {
+  const fi = G.fileInfo;
+  $('dropArea').innerHTML = `
+    <div class="loaded">
+      <div class="fi">PDF</div>
+      <div>
+        <div class="fn">${escHtml(fi.name)}</div>
+        <div class="fm">${fi.size} MB · ${fi.pages} pages · extracted</div>
+      </div>
+      <button class="change-btn" onclick="resetToUpload()">↺ change</button>
+    </div>`;
+}
+
+function renderProjectMeta() {
+  const p = G.data?.project || {};
+  $('siteMeta').innerHTML = `
+    <div style="margin-top:16px">
+      <div class="kv"><span>Project</span><b title="${escHtml(p.name||'')}">${escHtml(trunc(p.name||'—',32))}</b></div>
+      <div class="kv"><span>Client</span><b>${escHtml(trunc(p.client||'—',28))}</b></div>
+      <div class="kv"><span>Structure</span><b>${escHtml(p.structure||'—')}</b></div>
+      <div class="kv"><span>Seismic</span><b>${escHtml(p.seismic||'—')}</b></div>
+    </div>`;
+}
+
+function resetToUpload() {
+  G.loaded = false; G.ran = false; G.data = null; G.running = false;
+  $('dropArea').innerHTML = `
+    <div class="drop" id="drop">
+      <div class="drop-spin" style="display:none" id="dropSpinner"></div>
+      <div class="dt" id="dropTitle">Drop soil report PDF</div>
+      <div class="ds" id="dropSub">or click to browse &nbsp;·&nbsp; <a class="load-sample-link" id="loadSampleBtn">load DN 142 sample</a></div>
+    </div>`;
+  setupDropZone();
+  $('siteMeta').innerHTML = '';
+  buildDepthButtons();
+  $('runBtn').disabled = true;
+  $('runBtn').textContent = 'Run review';
+  $('hint').textContent = 'Upload a report or load the DN 142 sample to begin.';
+  $('footFile').textContent = 'Ready to analyse';
+  $('results').innerHTML = `
+    <div class="empty" id="emptyState">
+      <div class="big">No report loaded</div>
+      <div>Upload a PDF or load the DN 142 sample on the left, then run the review.</div>
+    </div>`;
+  $$('.stage').forEach(s => s.classList.remove('active','done'));
+}
+
+// ── Depth buttons ─────────────────────────────────────────────────────────────
+function buildDepthButtons() {
+  const seg    = $('depthSeg');
+  const layers = G.data?.layers;
+  const depths = layers?.length
+    ? layers.map((l,i) => [i, l.D])
+    : [[0,'1.0'],[1,'2.0'],[2,'2.475'],[3,'3.0'],[4,'4.0']];
+
+  seg.innerHTML = depths.map(([i,d]) =>
+    `<button data-i="${i}" ${i===G.depthIdx?'class="on"':''}>${d}</button>`
+  ).join('');
+
+  seg.querySelectorAll('button').forEach(b => b.addEventListener('click', () => {
+    seg.querySelectorAll('button').forEach(x => x.classList.remove('on'));
+    b.classList.add('on');
+    G.depthIdx = +b.dataset.i;
+    if (G.ran) { renderEngine(); renderReco(); renderSummary(); }
+  }));
+}
+
+function defaultDepthIdx() {
+  const layers = G.data?.layers;
+  if (!layers?.length) return 2;
+  let best = 0, bestD = Infinity;
+  layers.forEach((l,i) => { const d = Math.abs(l.D - 2.475); if (d < bestD) { bestD = d; best = i; }});
+  return best;
+}
+
+// ── Banner ────────────────────────────────────────────────────────────────────
+function showBanner(msg, type='warn') {
+  let el = $('statusBanner');
+  if (!el) {
+    el = document.createElement('div');
+    el.id = 'statusBanner';
+    document.querySelector('.rail').insertAdjacentElement('beforebegin', el);
+  }
+  el.className = `banner ${type}`;
+  el.innerHTML = `<span>${msg}</span>
+    <button onclick="this.parentElement.remove()" title="Dismiss">×</button>`;
+}
+
+// ── Run button ────────────────────────────────────────────────────────────────
+function setupRunButton() {
+  $('runBtn').addEventListener('click', runPipeline);
+}
+
+function runPipeline() {
+  if (G.running || !G.loaded) return;
+  G.running = true; G.ran = true;
+  $('runBtn').innerHTML = '<span class="spin"></span>Reviewing…';
+  $('runBtn').disabled = true;
+  $('emptyState')?.remove();
+
+  $('results').innerHTML =
+    blockHTML(2,'AI parameter extraction',
+      'Schema-driven extraction from the parsed report, with per-field confidence and source citations.','ext') +
+    blockHTML(3,'Validation & consistency',
+      'Automated engineering sanity and cross-reference checks before any computation.','val') +
+    blockHTML(4,'Bearing-capacity engine',
+      'Deterministic IS-code computation — recomputed live as you change the founding depth.','eng') +
+    blockHTML(5,'Foundation recommendation',
+      'Governing SBC mapped to the standardised foundation design class.','rec') +
+    blockHTML(6,'One-page engineering summary',
+      'Auto-generated, citation-backed draft for engineer review and sign-off.','sum');
+
+  renderExtraction();
+  renderValidation();
+  renderEngine();
+  renderReco();
+  renderSummary();
+
+  // Animate pipeline stages
+  let i = 0;
+  const order = [0,1,2,3,4,5];
+  const tick = () => {
+    $$('.stage').forEach((s,idx) => {
+      s.classList.toggle('active', idx === order[i]);
+      if (idx < order[i]) s.classList.add('done');
+    });
+    if (i >= 1) {
+      const ids = ['','ext','val','eng','rec','sum'];
+      document.getElementById('b-' + ids[i])?.classList.add('show');
+    }
+    i++;
+    if (i <= 5) {
+      setTimeout(tick, i === 1 ? 350 : 620);
+    } else {
+      $$('.stage').forEach(s => { s.classList.add('done'); s.classList.remove('active'); });
+      G.running = false;
+      $('runBtn').innerHTML = 'Re-run review';
+      $('runBtn').disabled  = false;
+    }
+  };
+  tick();
+}
+
+function blockHTML(n, title, desc, id) {
+  return `<div class="block" id="b-${id}">
+    <h3><span class="n">${n}</span>${title}</h3>
+    <div class="desc">${desc}</div>
+    <div id="c-${id}"></div></div>`;
+}
+
+// ── Render: Extraction ────────────────────────────────────────────────────────
+function renderExtraction() {
+  const el     = $('c-ext');
+  const params = G.data?.extracted || [];
+  if (!params.length) {
+    el.innerHTML = '<div class="hint">No parameters extracted from this report.</div>'; return;
+  }
+  el.innerHTML =
+    `<div class="pgrid">${params.map(p => `
+      <div class="pcard">
+        <div class="pl"><span>${escHtml(p.l)}</span><span class="conf ${p.c>=.92?'hi':'md'}">${Math.round(p.c*100)}%</span></div>
+        <div class="pv">${escHtml(p.v)} <small>${escHtml(p.u)}</small></div>
+        <div class="cite">source ${escHtml(p.p)}</div>
+      </div>`).join('')}</div>
+    <div class="hint" style="margin-top:13px">Extracted by <b>${escHtml(G.modelName)}</b> using a schema-driven prompt. Low-confidence fields route to manual review.</div>`;
+}
+
+// ── Render: Validation ────────────────────────────────────────────────────────
+function renderValidation() {
+  const el    = $('c-val');
+  const flags = G.data?.flags || [];
+  if (!flags.length) {
+    el.innerHTML = '<div class="hint">No validation flags generated.</div>'; return;
+  }
+  el.innerHTML = flags.map(f => `
+    <div class="flag ${f.t}">
+      <div class="ic">${f.t==='warn'?'!':'✓'}</div>
+      <div>
+        <div class="ft">${escHtml(f.h)}</div>
+        <div class="fd">${escHtml(f.d)}</div>
+        <div class="fp">${escHtml(f.p)}</div>
+      </div>
+    </div>`).join('');
+}
+
+// ── Render: Engine ────────────────────────────────────────────────────────────
+function renderEngine() {
+  const el     = $('c-eng');
+  const layers = G.data?.layers;
+  if (!layers?.length) {
+    el.innerHTML = `<div class="hint" style="color:var(--amber)">⚠ No bearing-capacity table found in this report. Calculations unavailable.</div>`; return;
+  }
+  const r       = layers[G.depthIdx];
+  const sh      = shearSBC(r);
+  const shVal   = sh.qna;
+  const stVal   = settleSBC(r);
+  const gov     = Math.min(shVal, stVal);
+  const govS    = shVal <= stVal;
+  const mx      = Math.max(shVal, stVal);
+
+  el.innerHTML = `
+    <div class="sbcwrap">
+      <div class="stat ${govS?'gov':''}">
+        ${govS?'<span class="govtag">GOVERNS</span>':''}
+        <div class="sl">Shear criterion · IS 6403</div>
+        <div class="sv">${shVal.toFixed(2)} <small>t/m²</small></div>
+        <div class="sm">Intermediate shear failure · q<sub>ult</sub> = ${sh.qult.toFixed(1)} t/m², FoS 3</div>
+      </div>
+      <div class="stat ${!govS?'gov':''}">
+        ${!govS?'<span class="govtag">GOVERNS</span>':''}
+        <div class="sl">Settlement · 60 mm · IS 8009</div>
+        <div class="sv">${stVal.toFixed(2)} <small>t/m²</small></div>
+        <div class="sm">SPT-N = ${r.N} · C<sub>d</sub> = ${(1+r.D/C.B).toFixed(3)} · R′<sub>w</sub> = 0.5</div>
+      </div>
+    </div>
+    <div class="barcmp">
+      <div class="barrow"><div class="bl">Shear</div><div class="bt"><div class="bf" style="width:${shVal/mx*100}%;background:${govS?'#F15A24':'#252B4A'}"></div></div><div class="bv">${shVal.toFixed(2)}</div></div>
+      <div class="barrow"><div class="bl">Settlement</div><div class="bt"><div class="bf" style="width:${stVal/mx*100}%;background:${!govS?'#F15A24':'#252B4A'}"></div></div><div class="bv">${stVal.toFixed(2)}</div></div>
+    </div>
+    <div class="hint" style="margin-top:6px">Governing SBC at <b>${r.D} m</b> = <b>${gov.toFixed(2)} t/m²</b> (the lesser criterion).</div>
+    <details class="formula"><summary>Show calculation</summary>
+      <div class="fx">q_ult = q·(N″q − 1)·Sq·dq  +  0.5·B·γ·N″γ·Sγ·dγ·W′
+     = ${r.q}·(${r.Nq} − 1)·${C.Sq}·${r.dq}
+     + 0.5·${C.B}·${r.g}·${r.Ng}·${C.Sg}·${r.dg}·${C.W}
+     = ${sh.qult.toFixed(2)} t/m²
+q_na (shear)      = ${sh.qult.toFixed(2)} / ${C.FoS} = ${shVal.toFixed(2)} t/m²
+
+q_na (settlement) = 0.7·(N−3)·R′w·Cd·Sp
+     = 0.7·(${r.N}−3)·${C.Rw}·${(1+r.D/C.B).toFixed(4)}·${C.Sp}
+     = ${stVal.toFixed(2)} t/m²</div>
+    </details>`;
+}
+
+// ── Render: Recommendation ────────────────────────────────────────────────────
+function renderReco() {
+  const el     = $('c-rec');
+  const layers = G.data?.layers;
+  if (!layers?.length) { el.innerHTML = '<div class="hint">No SBC data available.</div>'; return; }
+
+  const r   = layers[G.depthIdx];
+  const gov = Math.min(shearSBC(r).qna, settleSBC(r));
+  let cls, chips;
+  if (gov >= 40) {
+    cls   = '20 & 40';
+    chips = `<span class="chip">Supports 20 SBC class</span><span class="chip">Supports 40 SBC class</span>`;
+  } else if (gov >= 20) {
+    cls   = '20';
+    chips = `<span class="chip">Supports 20 SBC class</span><span class="chip alt">Below 40 SBC class</span>`;
+  } else {
+    cls   = '—';
+    chips = `<span class="chip alt">Ground improvement recommended</span>`;
+  }
+
+  el.innerHTML = `
+    <div class="reco">
+      <div class="badge">${cls}<span>SBC CLASS</span></div>
+      <div>
+        <div class="rt">Raft foundation at ${r.D} m founding depth</div>
+        <div class="rd">Governing SBC of ${gov.toFixed(2)} t/m² ${gov>=40?'comfortably clears both standardised wind-turbine foundation design classes':'meets the 20 SBC design class'}.</div>
+        <div class="chips">${chips}</div>
+        <div class="hint" style="margin-top:11px">Dynamic rotational stiffness data may be available for WTG natural-frequency (1P/3P resonance) checks — flag for the structural engineer.</div>
+      </div>
+    </div>`;
+}
+
+// ── Render: Summary ───────────────────────────────────────────────────────────
+function renderSummary() {
+  const el     = $('c-sum');
+  const layers = G.data?.layers;
+  if (!layers?.length) { el.innerHTML = '<div class="hint">No SBC data for summary.</div>'; return; }
+
+  const r          = layers[G.depthIdx];
+  const sh         = shearSBC(r).qna;
+  const st         = settleSBC(r);
+  const gov        = Math.min(sh, st);
+  const p          = G.data?.project || {};
+  const openFlags  = (G.data?.flags || []).filter(f => f.t === 'warn').length;
+  const strata     = G.data?.strata ? `${escHtml(G.data.strata)}. ` : '';
+
+  el.innerHTML = `
+    <div class="summary">
+      <div class="stitle">${escHtml(p.name||'Project')} — foundation review</div>
+      ${strata}Ground water: ${escHtml(p.gwt||'not reported')}. At a founding depth of <b>${r.D} m</b>,
+      the safe bearing capacity is governed by the <b>${sh<=st?'shear':'settlement'}</b> criterion at
+      <b>${gov.toFixed(2)} t/m²</b>. A <b>raft foundation</b> is recommended; the site clears the
+      ${gov>=40?'20 and 40':'20'} SBC standardised design class.
+      ${openFlags > 0
+        ? `${openFlags} source-document inconsistenc${openFlags>1?'ies':'y'} flagged for confirmation prior to sign-off.`
+        : 'All cross-checks passed.'}
+      <div class="sgrid">
+        <div class="kv"><span>Founding depth</span><b>${r.D} m</b></div>
+        <div class="kv"><span>Governing SBC</span><b>${gov.toFixed(2)} t/m²</b></div>
+        <div class="kv"><span>SBC (shear)</span><b>${sh.toFixed(2)} t/m²</b></div>
+        <div class="kv"><span>SBC (settlement)</span><b>${st.toFixed(2)} t/m²</b></div>
+        <div class="kv"><span>Foundation</span><b>Raft</b></div>
+        <div class="kv"><span>Open flags</span><b>${openFlags} to confirm</b></div>
+      </div>
+      <div class="export">
+        <button class="btn-o" onclick="window.print()">⬇ Print / save PDF</button>
+        <button class="btn-o" onclick="exportJSON()">⬇ Export JSON</button>
+      </div>
+    </div>`;
+}
+
+// ── Export ────────────────────────────────────────────────────────────────────
+function exportJSON() {
+  const layers = G.data?.layers;
+  const lyr    = layers?.[G.depthIdx];
+  const payload = {
+    reportData: G.data,
+    selectedDepth: lyr,
+    calculations: lyr ? {
+      shear     : shearSBC(lyr),
+      settlement: settleSBC(lyr),
+      governing : Math.min(shearSBC(lyr).qna, settleSBC(lyr))
+    } : null
+  };
+  const blob = new Blob([JSON.stringify(payload, null, 2)], { type:'application/json' });
+  const a = document.createElement('a');
+  a.href = URL.createObjectURL(blob);
+  a.download = (G.data?.project?.id || 'sbc-analysis') + '.json';
+  a.click();
+}
+
+// ── Utilities ─────────────────────────────────────────────────────────────────
+function escHtml(s) {
+  if (s == null) return '';
+  return String(s).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;');
+}
+function trunc(s, n) { return s.length > n ? s.slice(0, n-1) + '…' : s; }
+</script>
+</body>
+</html>
