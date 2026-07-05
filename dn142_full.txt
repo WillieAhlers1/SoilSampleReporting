@@ -1,0 +1,3654 @@
+=== PAGE 1 ===
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+  
+ 
+ 
+ 
+ 
+  
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+REPORT 
+ 
+ON 
+ 
+SOIL INVESTIGATION FOR CONSTRUCTION 
+OF  
+WIND MILL 
+AT  
+DN 142, BUKKANHATTI VILLAGE, KARNATAKA 
+ 
+ 
+ 
+ 
+Client 
+ 
+M/s. Serentica Renewables India Pvt. Ltd,  
+Karnataka. 
+ 
+ 
+ 
+ 
+ 
+By 
+Time 
+ 
+ 
+ 
+ 
+ 
+TIME INSTITUTE FOR MATERIALS TESTING 
+NO. 25, SANJEEVI NAGAR, 
+TRICHY - CHENNAI BYEPASS ROAD,  
+TIRUCHIRAPPALLI,  
+TAMIL NADU - 620 002. 
+PH: 0431 2401326 
+ 
+ 
+ 
+MAY 2026 
+ 
+
+=== PAGE 2 ===
+ 
+ 
+ 
+SUMMARY 
+ 
+Project  
+ 
+:  
+300MW Koppal Wind Project at DN 142, Bukkanhatti Village, Karnataka 
+Project Reference 
+: 
+Time / Soil Test /May 2026 
+Client  
+ 
+: 
+M/s. Serentica Renewables India Pvt. Ltd, Karnataka. 
+Type of Structure 
+: 
+Wind Mill Tower  
+Location 
+ 
+: 
+DN 142, Bukkanhatti Village, Karnataka 
+Scope  
+ 
+: 
+Geotechnical investigation for the entire area of construction 
+Test conducted  
+: 
+One explanatory bore hole up to 10m depth  
+Conducting standard penetration tests, collecting soil samples and   
+laboratory classification test etc.  
+ 
+FINDINGS 
+Soil at shallow depth 
+: 
+Gravels exists up to 4.5m depth 
+Hard stratum 
+ 
+: 
+Hard rock exists between 4.5m to 10m depth 
+Ground water table 
+: 
+Ground water was not encountered during the investigation up to 10m depth.   
+ 
+ 
+ 
+FOUNDATION  
+: 
+Based on the soil condition, it is recommended to provide  
+Raft foundation at a depth of 2.475m. 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+
+=== PAGE 3 ===
+CONTENTS 
+ 
+1. 
+INTRODUCTION ON SOIL TEST 
+1.1 – Introduction 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+- 
+1 
+1.2 – Preamble on Soil Investigation 
+ 
+ 
+ 
+ 
+ 
+ 
+- 
+2 
+1.3 – Investigation Programme, Procedure and Data 
+ 
+ 
+ 
+ 
+- 
+3 
+1.4 – Review of Field and Laboratory Results 
+ 
+ 
+ 
+ 
+ 
+- 
+4 
+1.5 – Conclusions and Recommendations 
+ 
+ 
+ 
+ 
+ 
+- 
+5 
+ 
+2.  
+SOIL PROFILES 
+ 
+2.1 – Plan of Bore Hole 1 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+- 
+6 
+ 
+2.2 – Bore log details for Bore Hole 1 
+ 
+ 
+ 
+ 
+ 
+ 
+- 
+7 
+ 
+2.3 – Summary of Engineering Geo Properties for Bore Hole 1 
+ 
+ 
+ 
+- 
+8 
+2.4 – Summary of Dynamic Properties for soil  
+ 
+ 
+ 
+ 
+ 
+- 
+15 
+2.5 – Summary of Laboratory test results for Bore Hole 1  
+ 
+ 
+ 
+- 
+20 
+ 
+2.6 – Shear Parameters for different layers of Bore Hole 1 
+ 
+ 
+ 
+- 
+21 
+ 
+ 
+3. 
+SIEVE ANALYSIS REPORT 
+ 
+3.1 – Sieve Analysis report of sample from Borehole No: 1 
+ 
+ 
+ 
+- 
+22 
+ 
+ 
+4. 
+SAFE BEARING CAPACITY CALCULATION 
+ 
+4.1 – Bearing Capacity calculations based on shear consideration (Direct Shear)  
+- 
+23 
+ 
+4.2 – Safe Bearing Capacity calculations based on settlement consideration (SPT value) - 
+26 
+ 
+ 
+5. 
+SAFE BEARING CAPACITY OF THE SOIL FOR RAFT FOUNDATION  
+(60MM SETTLEMENT) 
+ 
+ 
+5.1 – Safe Bearing capacity of soil based on SPT values  
+ 
+ 
+ 
+- 
+28 
+ 
+5.2 – Safe Bearing capacity of soil based on Laboratory test 
+Through Direct shear 
+ 
+ 
+ 
+ 
+ 
+ 
+- 
+28 
+ 
+5.3   – Calculation of Bearing Capacity through shear considering  
+                           both Angle of internal friction & Cohesion 
+ 
+ 
+ 
+ 
+- 
+29 
+ 
+5.4 – Comparison of safe bearing capacity of soil  
+                           
+Through shear and settlement  
+ 
+ 
+ 
+ 
+- 
+30 
+5.5 - Recommended safe bearing capacity values at different depths for Raft Foundation - 
+31 
+ 
+6.  
+RQD (ROCK QUALITY DESIGNATION) 
+6.1 – Definition of RQD  
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+- 
+32 
+6.2 – Geotechnical Parameters for Rock Sample  
+ 
+ 
+ 
+ 
+- 
+33 
+6.3 – Rock Mass Rating System for Jointed Rock Masses 
+ 
+ 
+ 
+- 
+35 
+6.4 – Geotechnical Parameters of Rock Samples 
+ 
+ 
+ 
+ 
+- 
+36 
+ 
+7. 
+SOIL & ROCK SAMPLE PHOTOS  
+ 
+ 
+            SITE PHOTOS 
+ 
+
+=== PAGE 4 ===
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+SOIL INVESTIGATION 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+
+=== PAGE 5 ===
+ 
+ 
+May 07, 2026 
+ 
+ 
+ 
+ 
+               
+ 
+ 
+To 
+M/s. Serentica Renewables India Pvt. Ltd,  
+Karnataka. 
+ 
+REPORT ON SOIL INVESTIGATION 
+(Ref: TIME/ SOIL TEST/ MAY 2026) 
+ 
+ 
+ Sub: Soil Investigation for Construction of a wind mill tower at DN 142, Bukkanhatti Village,  
+          Karnataka - reg. 
+  Ref: Based on mail, Dated: 10.12.2024 
+ 
+ 
+1.1 
+Introduction: 
+ 
+ 
+It is proposed to construct a Wind Mill Tower at DN 142, Bukkanhatti Village, Karnataka.           
+A detailed soil investigation was suggested for estimating the safe bearing capacity of the soil, so 
+that suitable type of foundation can be decided for the proposed structure. Time Institute for 
+Materials Testing (TIME) has been requested to undertake the soil investigation at the proposed site. 
+The study was carried out by TIME between 01.05.2026 & 02.05.2026. This report presents 
+complete investigation data and discusses the results to recommend the bearing capacity values at 
+different depths for the proposed structure.  
+ 
+ 
+Section 2 describes the soil profile and bore log details of one exploratory bore hole. Section 3 of this 
+report presents the grain size distribution curves. Section 4 of this report presents the safe bearing 
+capacity calculation. Section 5 of this report presents the safe Bearing capacity of soil for Raft 
+foundation (60mm Settlement). Section 6 of this report presents the RQD (Rock Quality 
+Designation). Section 7 of this report presents the soil & rock sample photos. Section 8 of this report 
+presents site photos. 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+#25,SanjeeviNagar,VinniGardens,Trichy-ChennaiByePassRoad,Trichy-620002.Tel:+914312401326, 
+Mob:+919443327936Email:tmaterialstesting@yahoo.co.in,tmaterialstesting1@gmail.comWeb:www.timeinstitute.net 
+ 
+ 
+1 
+ 
+
+=== PAGE 6 ===
+ 
+07:05:2026 
+ 
+Preamble on Soil Investigation 
+ 
+ 
+ 
+1. Place of Investigation 
+ 
+: 
+Bukkanhatti Village, Karnataka 
+ 
+ 
+2. Location 
+ 
+ 
+ 
+: 
+DN 142 
+ 
+ 
+3. Date of Investigation 
+ 
+: 
+01.05.2026 & 02.05.2026 
+ 
+ 
+4. Carried out in the person of 
+: 
+Mr. Y. Hemanth Kumar 
+ 
+ 
+ 
+ 
+ 
+5. Site Address  
+ 
+ 
+: 
+Bukkanhatti Village, Karnataka 
+ 
+ 
+ 
+ 
+ 
+ 
+6. Client 
+ 
+ 
+    
+: 
+M/s. Serentica Renewables India Pvt. Ltd,  
+Karnataka.   
+  
+7. Reference  
+ 
+ 
+: 
+Based on mail dated: 10.12.2024 
+ 
+ 
+8. Carried out by 
+ 
+ 
+: 
+Time Institute for Materials Testing, 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+Soil and Structural Division, 
+ 
+ 
+ 
+ 
+        No. 25, Sanjeevi Nagar,  
+                                                                      Trichy - Chennai Byepass Road,  
+          
+ 
+        Tiruchirappalli, Tamil Nadu - 620 002. 
+ 
+9. Purpose of Soil Investigation   : 
+Construction of wind mill 
+ 
+ 
+ 
+Soil samples were collected at different depths and were preserved and 
+transported to the laboratory for test. 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ #25,SanjeeviNagar,VinniGardens,Trichy-ChennaiByePassRoad,Trichy-620002.Tel:+914312401326, 
+Mob:+919443327936Email:tmaterialstesting@yahoo.co.in,tmaterialstesting1@gmail.comWeb:www.timeinstitute.net 
+2 
+
+=== PAGE 7 ===
+Report on soil investigation for construction of Wind Mill Tower 
+ at DN 142, Bukkanhatti Village, Karnataka 
+ 
+1.3 
+Investigation Programme, Procedure and Data: 
+ 
+ 
+Investigation was carried out in one location at the site through exploratory bore hole. Soil 
+samples were collected from bore hole at different depths for conducting laboratory test. 
+Standard Penetration test was conducted at regular intervals and ‘N’ values were recorded. 
+Undisturbed soil samples were collected and were preserved and transported to the 
+laboratory for detailed identification tests. Based on the field and laboratory tests on the 
+samples collected, the results are furnished in this report. 
+ 
+An exploratory bore hole was advanced from the existing ground level using truck mounted 
+rotary drilling techniques supplemented by Bentonite mud circulation. This drilling procedure 
+with mud circulation is found most suitable for making exploratory bore hole. The mud 
+circulation was employed through the drill rods and letting it out though the side jets provided 
+in the cutting tool thus preventing any disturbance at the bore hole bottom. Mud circulation 
+was used to stabilize the sides and the bottom of the bore hole, and then to bring the soil cuts 
+to the surface. It is important to note that the mud jet is not used to cut the soils as in the case 
+of wash boring technique. Use of drilling mud will also help in preventing the disturbance to 
+the soil at the bore hole bottom during drilling operations. Diameter of the bore hole is about 
+150mm.  
+ 
+Bore hole was always kept full with the drilling mud so that a positive head is maintained in 
+the bore hole thus preventing any disturbance to the soil within the test zone. 
+ 
+The field tests included Standard penetration test, Disturbed and undisturbed soil sampling, 
+identification of different soil layers, Ground water table observation, complete logging of the 
+bore hole, etc. 
+ 
+ 
+Laboratory investigation consisted of classification tests like grain size distribution analysis, 
+determination of liquid and plastic limit values etc. Unconfined compression and Direct shear 
+test was conducted on preserved soil samples. All the field and laboratory tests were 
+conducted according to the procedures stipulated in relevant IS codes.     
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+  
+Time Institute for Materials Testing, Trichy 
+ 
+ 
+ 
+ 
+ 
+ 
+                      3 
+ 
+ 
+ 
+
+=== PAGE 8 ===
+Report on soil investigation for construction of Wind Mill Tower 
+ at DN 142, Bukkanhatti Village, Karnataka 
+ 
+ 
+1.4 
+Review of Field and Laboratory Results: 
+ 
+ 
+Sub soil Profile 
+ 
+ 
+The original ground level in the presently investigated area was plain terrain.  
+ 
+ 
+ 
+The natural soil below the existing ground level is gravel. This layer is extended up to 4.5m 
+depth. Below which hard rock exists from 4.5m to 10m depth from the existing ground level. 
+The soil stratification and its variation under present investigation are available in bore log 
+details. The ‘N’ value is progressively increasing towards depth, due to the soil stratification. 
+ 
+ 
+Ground Water Table 
+ 
+Ground water was not encountered during the investigation up to 10m depth.   
+ 
+ 
+ 
+Shear Strength 
+ 
+ 
+Standard Penetration test blow counts ‘N’ is measured at different levels in the bore hole. 
+ 
+Mainly these ‘N’ values are used to assess the shear strength of different soil layers.  
+ 
+Cohesive layers: The classification of ‘N’ values in moderate to high plasticity medium clay 
+deposits developed by Terzaghi is used for estimating the unconfined compression strength 
+and undrained shear strength of clay and sandy clay layers. The consistency between the N 
+values and the liquidity index values is reviewed while assigning undrained shear strength for 
+soft to medium clay layers. 
+ 
+Non - Cohesive Layers: The gravel layers towards depth are of residual type and suitable 
+modifications are made to take care of the presence of plastic fines in the residual soil. 
+Conventional method of estimating the angle of shearing resistance  corresponding to the 
+relative density and the grain size distribution as per the classification suggested by Peck and 
+suitably modified by the R.K. Hough to account for the influence of grain size distribution is 
+adopted here. 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+Time Institute for Materials Testing, Trichy 
+ 
+ 
+ 
+ 
+ 
+ 
+                      4 
+ 
+ 
+ 
+
+=== PAGE 9 ===
+Report on soil investigation for construction of Wind Mill Tower 
+ at DN 142, Bukkanhatti Village, Karnataka 
+ 
+ 
+Depositional Strata of Sub soil based on SPT Values: 
+Table – (i) Co-relation of SPT value for Cohesionless Soil 
+ 
+SPT (N) Value 
+Consistency of Soil 
+0 - 4 
+Very Loose 
+4 - 10 
+Loose 
+10 - 30 
+Medium 
+30 - 50 
+Dense 
+> 50 
+Very Dense 
+ 
+Table – (ii) Co-relation of SPT value for Cohesive Soil 
+ 
+SPT (N) Value 
+Consistency of Soil 
+0 - 2 
+Very Soft 
+2 - 4 
+Soft 
+4 - 8 
+Medium 
+8 - 15 
+Stiff 
+15 - 30 
+Very Stiff 
+> 30 
+Hard 
+ 
+ 
+ 
+1.5 
+Conclusions & Recommendations: 
+ 
+Shear strength parameters and compressibility parameters of different soil layers are 
+established from the field and laboratory tests.  
+ 
+Based on the existing soil condition and its SBC values, it is recommended to provide 
+Raft foundation at a depth of 2.475m from the existing ground level. 
+ 
+ 
+For Time Institute for Materials Testing 
+ 
+ 
+07th May 2026  
+ 
+    
+                                  Dr. B.N. Krishnaswami. 
+ 
+ 
+ 
+ 
+Time Institute for Materials Testing, Trichy 
+ 
+ 
+ 
+ 
+ 
+ 
+                      5 
+               
+               
+               
+
+=== PAGE 10 ===
+ 
+ 
+               
+               
+ 
+               
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+               
+ 
+               
+ 
+ 
+ 
+                      
+ 
+ 
+SITE LOCATION PLAN 
+
+=== PAGE 11 ===
+SURVEY
+NO. 25, SANJEEVI NAGAR, 
+SCALE
+NTS
+CLIENT
+DATE OF
+SOIL
+CONSULTANT
+TIRUCHIRAPPALLI,  TAMIL NADU - 620 002. 
+PHONE : 0431 - 2401326(OFF)
+TRICHY - CHENNAI BYEPASS ROAD,  
+TIME Institute for Materials Testing
+PLAN OF BORE HOLE AND SITE DETAILS AT
+DRAWING - 01
+DRG.NO
+TITLE
+0
+REV.
+DN 142, BUKKANHATTI VILLAGE, KARNATAKA
+M/s. Serentica Renewables India Pvt. Ltd,  Karnataka. 
+NOTE:
+SITE LEVEL IS EQUAL TO THE ROAD LEVEL
+&
+SITE PLAN
+SITE LOCATION
+BORE LOG LOCATION
+LEGEND:
+SITE LOCATION
+BORE LOG LOCATION
+LEGEND:
+N
+Page No: 6
+01.05.2026
+02.05.2026
+DN 142
+AGRICULTURAL LAND
+AGRICULTURAL LAND
+AGRICULTURAL LAND
+AGRICULTURAL LAND
+KUNNAL
+HIREBOMMANAL
+ 
+
+=== PAGE 12 ===
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+BORE LOG DETAILS 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+
+=== PAGE 13 ===
+1.0
+SPT - 1
+50
+2.0
+SPT - 2
+52
+2.475
+SPT - 3
+53
+3.0
+SPT - 4
+54
+4.0
+SPT - 5
+56
+4.5
+10.0
+10.0
+Bore terminated at 15m depth from the existing ground level
+Legend:
+SPT
+GP
+: Poorly graded gravels
+Time Institute for Materials Testing, Trichy
+7
+Gravels
+GP
+REC = 60%, RQD = 60%
+Hard rock
+HR
+4.5
+Report on soil investigation for construction of Wind Mill Tower
+at DN 142, Bukkanhatti Village, Karnataka
+: Report on soil investigation for construction of Wind Mill Tower for
+Project Name
+Depth of G.W.T
+Location
+: DN 142, Bukkanhatti Village, Karnataka
+2.3 BORE LOG DETAILS FOR BORE HOLE 1
+: 43P E 634616  N 1723874
+  M/s. Serentica Renewables India Pvt. Ltd, Karnataka
+: Standard Penetration Test
+Graphical 
+representati
+on
+of
+penetration 
+Resistance
+Lithology of Bore Hole
+Date of Completion : 02.05.2026
+Classificat
+ion
+: Zone II  (AS per IS 1893.1.2002 - Fifth revision) 
+Sample 
+Blows
+per
+30cm
+: 01.05.2026
+Type of Boring : Calyx Drill
+Site Level
+Co- ordinates
+: Nil
+Hammer Wt.  & Drop : 63.5 kg/760 mm
+: Equal to the road level
+Dia of Boring : 150mm
+Date of Commenceme
+Soil 
+Profile
+Depth 
+below 
+G.L.       
+(m)
+Sample
+Type
+& Number
+Seismic Zone
+Description
+0 30 60 90
+ 
+ 
+ 
+ 
+
+=== PAGE 14 ===
+Report on soil investigation for construction of Wind Mill Tower 
+ at DN 142, Bukkanhatti Village, Karnataka 
+ 
+2.3 Summary of Engineering Geo Properties for Bore Hole 1 
+ 
+Density: 
+ 
+The mass density or density of a material is its mass per unit volume. The symbol most often used for 
+density is ρ.  Mathematically, density is defined as mass divided by volume: 
+ 
+where  
+ρ is the density (kg/m3),  
+m is the mass (kg), and  
+V is the volume (m3)  
+ 
+Relative Density: 
+ 
+Relative density or density index is the ratio of the difference between the void ratios of cohesion 
+less soil in its loosest state and existing natural state to the difference between its void ratio in the 
+loosest and densest states. 
+ 
+Dr 
+= 
+ᵞdmax     x   ᵞd - ᵞdmin    x 100 %          
+             ᵞd             ᵞd max - ᵞd min 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+Time Institute for Materials Testing, Trichy 
+ 
+ 
+ 
+ 
+ 
+ 
+                    8 
+ 
+ 
+ 
+ 
+
+=== PAGE 15 ===
+Report on soil investigation for construction of Wind Mill Tower 
+ at DN 142, Bukkanhatti Village, Karnataka 
+ 
+Poisson's ratio: 
+Poisson's ratio is the ratio of the transverse strain normal to the applied load, to the axial strain in the 
+direction of the applied load. 
+ 
+Poisson's Ratio can be expressed as 
+μ = - εt / εl           
+where 
+μ = Poisson's ratio; εt = transverse strain;  εl = longitudinal or axial strain 
+Strain can be expressed as 
+ε = dl/L           
+where 
+dl = Change in length; L = Initial length                                                        
+Young's modulus: 
+ 
+Young's modulus, also known as the tensile modulus or elastic modulus, is a measure of 
+the stiffness of an elastic material and is a quantity used to characterize materials. It is defined as the 
+ratio of the stress along an axis over the strain along that axis in the range of stress. 
+ 
+Within the limits of elasticity, the ratio of the linear stress to the linear strain is termed the modulus of 
+elasticity or Young's Modulus. It is this property that determines how much a bar will sag under its 
+own weight or under a loading when used as a beam within its limit of proportionality. 
+ 
+The SI unit of modulus of elasticity (E, or less commonly Y) is the pascal (Pa or N/m² or m−1·kg·s−2). 
+The practical units used are megapascals (MPa or N/mm²) or gigapascals (GPa or kN/mm²). 
+ 
+Young's modulus, E, can be calculated by dividing the tensile stress by the tensile strain in the elastic 
+(initial, linear) portion of the stress-strain curve: 
+ 
+ 
+Time Institute for Materials Testing, Trichy 
+ 
+ 
+ 
+ 
+ 
+ 
+                    9 
+ 
+ 
+ 
+ 
+
+=== PAGE 16 ===
+Report on soil investigation for construction of Wind Mill Tower 
+ at DN 142, Bukkanhatti Village, Karnataka 
+ 
+ 
+ 
+where 
+E is the Young's modulus (modulus of elasticity) 
+F is the force exerted on an object under tension; 
+A0 is the original cross-sectional area through which the force is applied; 
+ΔL is the amount by which the length of the object changes; 
+L0 is the original length of the object. 
+ 
+ 
+Modulus of Rigidity (or Shear Modulus): 
+ 
+Modulus of Rigidity (or Shear Modulus) is the coefficient of elasticity for a shearing force. It is defined 
+as "the ratio of shear stress to the displacement per unit sample length (shear strain)”. 
+shear modulus or modulus of rigidity, denoted by G, is defined as the ratio of shear 
+stress to the shear strain 
+ 
+ 
+where 
+ = shear stress; 
+ is the force which acts 
+ is the area on which the force acts 
+in engineering, 
+ = shear strain. Elsewhere, 
+ 
+ is the transverse displacement 
+ is the initial length 
+Shear modulus' derived SI unit is the pascal (Pa), although it is usually expressed in 
+gigapascals (GPa). 
+ 
+ 
+ 
+Time Institute for Materials Testing, Trichy 
+ 
+ 
+ 
+ 
+ 
+ 
+                    10 
+ 
+ 
+ 
+ 
+
+=== PAGE 17 ===
+R Report on soil investigation for construction of Wind Mill Tower 
+ at DN 142, Bukkanhatti Village, Karnataka 
+ 
+Bulk Modulus: 
+The bulk modulus (
+ or 
+) of a substance measures the substance's resistance to uniform 
+compression. It is defined as the ratio of the infinitesimal pressure increase to the resulting 
+relative decrease of the volume. Its base unit is the pascal. 
+Bulk modulus 
+ can be formally defined by the equation 
+ 
+ 
+ 
+where 
+ is pressure, 
+ is volume, and 
+ denotes the derivative of pressure with respect to 
+volume. Equivalently 
+ 
+ 
+ 
+where ρ is density and dP/dρ denotes the derivative of pressure with respect to density. 
+ 
+Compressive Strength: 
+ 
+Maximum stress a material can sustain under crush loading. The compressive strength of a material 
+that fails by shattering fracture can be defined within fairly narrow limits as an independent property. 
+However, the compressive strength of materials that do not shatter in compression must be defined 
+as the amount of stress required to distort the material an arbitrary amount. Compressive strength is 
+calculated by dividing the maximum load by the original cross-sectional area of a specimen in a 
+compression test. 
+ 
+Compressive strength = Load / Area 
+ 
+ 
+where, F = Load applied [KN], A = Area [m2] 
+ 
+ 
+ 
+ 
+Time Institute for Materials Testing, Trichy 
+ 
+ 
+ 
+ 
+ 
+ 
+                   11 
+ 
+ 
+
+=== PAGE 18 ===
+Report on soil investigation for construction of Wind Mill Tower 
+ at DN 142, Bukkanhatti Village, Karnataka 
+ 
+Drained Shear Strength: 
+ 
+The drained shear strength is the shear strength of the soil when pore fluid pressures, generated 
+during the course of shearing the soil, are able to dissipate during shearing. It also applies where no 
+pore water exists in the soil (the soil is dry) and hence pore fluid pressures are negligible. It is 
+commonly approximated using the Mohr-Coulomb equation. (It was called "Coulomb's equation" 
+by Karl von Terzaghi in 1942.) (Terzaghi 1942) combined it with the principle of effective stress. 
+In terms of effective stresses, the shear strength is often approximated by: 
+ 
+ = σ' tan(φ') + c' 
+ 
+Where σ' =(σ - u), is defined as the effective stress. σ is the total stress applied normal to the shear 
+plane, and u is the pore water pressure acting on the same plane. 
+φ' = the effective stress friction angle, or the'angle of internal friction' after Coulomb friction. 
+The coefficient of friction 
+ is equal to tan(φ'). Different values of friction angle can be defined, 
+including the peak friction angle, φ'p, the critical state friction angle, φ'cv, or residual friction angle, φ'r. 
+c' = is called cohesion, however, it usually arises as a consequence of forcing a straight line to fit 
+through measured values of (τ,σ')even though the data actually falls on a curve. The intercept of the 
+straight line on the shear stress axis is called the cohesion. It is well known that the resulting intercept 
+depends on the range of stresses considered: it is not a fundamental soil property. The curvature 
+(nonlinearity) of the failure envelope occurs because the dilatancy of closely packed soil particles 
+depends on confining pressure. 
+ 
+Undrained Shear Strength: 
+ 
+This term describes a type of shear strength in soil mechanics as distinct from drained strength. 
+Conceptually, there is no such thing as the undrained strength of a soil. It depends on a number of 
+factors, the main ones being: 
+ 
+Orientation of stresses 
+ 
+Stress path 
+ 
+Rate of shearing 
+ 
+Volume of material (like for fissured clays or rock mass) 
+ 
+ 
+ 
+Time Institute for Materials Testing, Trichy 
+ 
+ 
+ 
+ 
+ 
+ 
+                    12 
+ 
+ 
+
+=== PAGE 19 ===
+Report on soil investigation for construction of Wind Mill Tower 
+ at DN 142, Bukkanhatti Village, Karnataka 
+ 
+Undrained strength is typically defined by Tresca theory, based on Mohr's circle as: 
+σ1 - σ3 = 2 Su 
+Where: 
+ 
+σ1 is the major principal stress 
+σ3 is the minor principal stress 
+ is the shear strength (σ1 - σ3)/2 
+hence,  = Su (or sometimes cu), the undrained strength. 
+ 
+It is commonly adopted in limit equilibrium analyses where the rate of loading is very much greater 
+than the rate at which pore water pressures, that are generated due to the action of shearing the soil, 
+may dissipate. An example of this is rapid loading of sands during an earthquake, or the failure of a 
+clay slope during heavy rain, and applies to most failures that occur during construction. 
+ 
+As an implication of undrained condition, no elastic volumetric strains occur, and thus Poisson's 
+ratio is assumed to remain 0.5 throughout shearing. The Tresca soil model also assumes no plastic 
+volumetric strains occur. This is of significance in more advanced analyses such as in finite element 
+analysis. In these advanced analysis methods, soil models other than Tresca may be used to model 
+the undrained condition including Mohr-Coulomb and critical state soil models such as the modified 
+Cam-clay model, provided Poisson's ratio is maintained at 0.5. 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+Time Institute for Materials Testing, Trichy 
+ 
+ 
+ 
+ 
+ 
+ 
+                   13 
+ 
+ 
+ 
+
+=== PAGE 20 ===
+Depth 
+below
+G.L.
+(m)
+Profile
+Time Institute for Materials Testing, Trichy
+14
+319
+506
+0.24
+790
+850
+1134
+0.20
+4.5m - 10m
+Hard rock
+2.40
+2400
+2041
+Modulus
+of
+Rigidity (MPa)
+Poisson ratio
+Lithology of Bore Hole
+Natural 
+Moisture 
+Content (%)
+Bulk 
+Density 
+(gm/cc)
+0.001
+9.45
+1.99
+Bulk Modulus
+(MPa)
+1818
+Report on soil investigation for construction of Wind Mill Tower
+Density   (kg/m3)
+Soil Description
+at DN 142, Bukkanhatti Village, Karnataka
+Elasticity 
+Modulus (Mpa)
+0 - 4.5m
+Gravels 
+
+=== PAGE 21 ===
+Report on soil investigation for construction of Wind Mill Tower 
+ at DN 142, Bukkanhatti Village, Karnataka 
+ 
+2.4. 
+DYNAMIC PROPERTIES OF SOIL 
+ 
+ 
+Elastic Modulus (E static): 
+ 
+The modulus of elasticity (also known as the elastic modulus, the tensile modulus or 
+Young’s modulus) is a number that measures an object or substance resistance to 
+being deformed elastically (i.e., non-permanently) when a force is applied to it. The 
+elastic modulus of an object is defined as the slope of its stress – strain curve in the 
+elastic deformation region. A stiffer material will have a higher elastic modulus.  
+ 
+Static young’s modulus Es, which can be obtained from the following Equation 
+ 
+E static   (Es)   
+=  
+Linear Stress / Linear Strain 
+ 
+Where stress is the force causing the deformation divided by the area to which the 
+force is applied and strain is the ratio of the change in length parameter caused by 
+the deformation to the original value of the length parameter. 
+ 
+ 
+Elastic Modulus (E dynamic): 
+ 
+E dynamic which can be obtained from the following formula 
+ 
+ 
+E dynamic (Ed)  
+=  
+2 (1 + µ) G’ 
+ 
+Where 
+ 
+µ = Poisson’s Ratio for dynamic condition 
+G’ = Dynamic Shear Modulus 
+ 
+ 
+ 
+ 
+ 
+ 
+ Time Institute for Materials Testing, Trichy 
+ 
+ 
+ 
+ 
+ 
+ 
+                  15              
+  
+ 
+
+=== PAGE 22 ===
+Report on soil investigation for construction of Wind Mill Tower 
+ at DN 142, Bukkanhatti Village, Karnataka 
+ 
+ 
+Poisson’s Ratio (µ): 
+ 
+ 
+Poisson’s Ratio (µ) is defined as the ratio of axial compression (Ɛv) to lateral 
+expansion (ƐL) strains. 
+ 
+ 
+ 
+µ  
+=  
+1/m 
+m  
+=  
+Ɛv / ƐL 
+Therefore 
+ 
+µ  
+=  
+ƐL / Ɛv 
+  
+ 
+ 
+Shear Modulus (G’): 
+ 
+ 
+Shear Modulus (G’) is defined as the ratio of Shear Stress to Shear Strain. It is 
+related to Ed and µ. 
+ 
+ 
+ 
+ 
+i.e. G’   
+= 
+Ed 
+       
+       
+ 
+       2 (1+ µ) 
+ 
+ 
+ 
+Stiffness: 
+ 
+Stiffness is the rigidity of an object – the extent to which it resists deformation in 
+response to an applied force. The complementary concept is flexibility or pliability: 
+the more flexible an object is the less stiff it is. 
+ 
+The Stiffness, k, of a body is a measure of the resistance offered by an elastic body 
+to deformation. For an elastic body with a single degree of freedom (DOF) (for 
+example, stretching or compression of a rod), the stiffness is defined as  
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+Time Institute for Materials Testing, Trichy 
+ 
+ 
+ 
+ 
+ 
+ 
+                   16             
+ 
+ 
+
+=== PAGE 23 ===
+Report on soil investigation for construction of Wind Mill Tower 
+ at DN 142, Bukkanhatti Village, Karnataka 
+ 
+ 
+k  
+= 
+ F/ δ 
+where, 
+ 
+ 
+ 
+F  
+=  
+The force applied on the body 
+δ  
+= 
+The displacement produced by the force along  
+the same degree of freedom (for 
+instance, the change in length of a 
+stretched spring) 
+ 
+In the International system of Units, Stiffness is typically measured in newtons per 
+meter. 
+ 
+ 
+Rotational Stiffness: 
+ 
+A body may also have a rotational stiffness, k is given by 
+ 
+ 
+ 
+ 
+k  
+=  
+M / θ 
+ 
+Where 
+ 
+ 
+ 
+M  
+=  
+Applied moment 
+θ  
+=  
+Rotation. 
+ 
+In the SI system, rotational stiffness is typically measured in Newton – meters per radian 
+The formula to calculate rotational stiffness for circular foundation will be  
+ 
+kr 
+=  
+8 G’R3 
+ 
+ 
+ 
+ 
+3 (1- µ) 
+Where 
+ 
+ 
+ 
+kr 
+=  
+Rotational Stiffness 
+G’  
+=  
+Dynamic Shear Modulus 
+R 
+=  
+Radius of foundation  
+µ 
+= 
+Poisson’s Ratio 
+ 
+ 
+ 
+Time Institute for Materials Testing, Trichy 
+ 
+ 
+ 
+ 
+ 
+ 
+                    17           
+ 
+
+=== PAGE 24 ===
+Report on soil investigation for construction of Wind Mill Tower 
+ at DN 142, Bukkanhatti Village, Karnataka 
+ 
+ 
+ 
+Dynamic Spring Constant, k: 
+ 
+Springs have their own natural "spring constants" that define how stiff they are. The 
+letter k is used for the spring constant. By Newton's Third Law of Motion, as 
+a spring is pulled, it pulls back with a restoring force. 
+ 
+Vertical mode: 
+ 
+kz  
+ 
+=  
+4Gro ŋz 
+                                                              
+ 
+1 - µ 
+Where 
+ 
+ 
+ 
+kz 
+ 
+=  
+Dynamic Spring Constant 
+G’  
+ 
+=  
+Dynamic Shear Modulus 
+ro 
+ 
+=  
+Radius of foundation  
+µ 
+ 
+= 
+Poisson’s Ratio 
+ŋz 
+ 
+= 
+1 +0.6 (1- µ) (h/ro) 
+Where 
+ 
+ 
+ 
+h 
+ 
+=  
+Depth of embedment 
+ 
+Horizontal mode: 
+kz  
+ 
+=  
+32 (1 - µ) Gro ŋx 
+                                                       
+ 
+ 
+  7 - 8µ 
+ŋx 
+ 
+= 
+1 +0.55 (2- µ) (h/ro) 
+ 
+Rocking mode: 
+kΦ  
+ 
+=  
+8 Gro
+3   ŋΦ 
+                                                                 
+ 
+3(1 - µ) 
+ŋΦ 
+ 
+= 
+1 + 1.2 (1- µ) (h/ro) + 0.2 (2- µ) (h/ro)3 
+ 
+Torsion mode: 
+kΨ 
+ 
+=  
+16 Gro
+3   
+                                                                      
+   3 
+ 
+Time Institute for Materials Testing, Trichy 
+ 
+ 
+ 
+ 
+ 
+ 
+                    18          
+          
+
+=== PAGE 25 ===
+Depth
+below
+G.L. (m)
+Profile
+Vertical 
+Mode (N/m)
+Horizontal 
+Mode (N/m)
+Rocking 
+Mode (Nm)
+Torsion 
+Mode (Nm)
+Time Institute for Materials Testing, Trichy
+19
+0.34
+1171
+6.245.E+06
+2397
+Youngs 
+Modulus
+of
+Elasticity,        
+E Dynamic (Mpa)
+Lithology of Bore Hole
+Shear 
+Modulus 
+(G')  (Mpa)
+Rotational 
+Stiffness 
+(Nm/rad)
+7.793.E+10
+0 - 4.5m
+Gravels 
+3138
+1.278.E+07
+9.13E+12
+Soil Description
+4.73E+12
+1.512.E+11
+6232
+0.30
+7.084.E+10
+5.683.E+12
+1.437.E+11
+1.108.E+13
+Report on soil investigation for construction of Wind Mill Tower
+Summary of Dynamic Properties for soil 
+Poisson's 
+Ratio
+(µ)
+for
+dynamic 
+condition
+at DN 142, Bukkanhatti Village, Karnataka
+Dynamic Spring Constant (N/m)
+4.5m - 10m
+Hard rock
+ 
+
+=== PAGE 26 ===
+1
+1.0
+55
+2.66
+53.6
+26.7
+16.5
+3.2
+0.0
+0.0
+2
+2.0
+57
+2.66
+54.2
+27.5
+15.4
+2.9
+0.0
+0.0
+3
+2.475
+59
+2.66
+55.9
+28.1
+13.7
+2.3
+0.0
+0.0
+4
+3.0
+60
+2.66
+57.6
+29.5
+10.8
+2.1
+0.0
+0.0
+5
+4.0
+61
+2.66
+59.5
+30.2
+8.7
+1.6
+0.0
+0.0
+Time Institute for Materials Testing, Trichy
+20
+Medium 
+Sand (%)
+Coarse 
+sand (%)
+Gravel (%)
+Specific 
+gravity
+Soil Description
+Bore Hole 1
+Gravels
+Report on soil investigation for construction of Wind Mill Tower
+at DN 142, Bukkanhatti Village, Karnataka
+2.5 Summary of Laboratory Test Results for Bore Hole 1 
+Bore hole No.
+S.No.
+Silt (%)
+Clay (%)
+Fine
+sand
+(%)
+Depth (m)
+Relative 
+Density (%)
+
+=== PAGE 27 ===
+S.No. Bore Hole No.
+Depth
+below
+G.L.
+(m)
+Soil Description
+N
+Shear
+Strength
+'Ø' (in degrees)
+1
+1.0
+50
+33.93
+2
+2.0
+52
+34.16
+3
+2.475
+53
+34.38
+5
+3.0
+54
+34.61
+6
+4.0
+56
+34.83
+Time Institute for Materials Testing, Trichy
+21
+Report on soil investigation for construction of Wind Mill Tower
+at DN 142, Bukkanhatti Village, Karnataka
+2.6 Shear Strength Parameters for Different layers of Bore Hole 1
+Bore Hole 1
+Gravels
+ 
+ 
+ 
+ 
+ 
+
+=== PAGE 28 ===
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+GRAIN SIZE ANALYSIS 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+
+=== PAGE 29 ===
+Report on soil investigation for construction of Wind Mill Tower 
+ at DN 142, Bukkanhatti Village, Karnataka 
+ 
+3.1 TEST REPORT ON SIEVE ANALYSIS OF SAMPLE 
+Bore Hole – 1 @ 1m to 4m 
+SIEVE SIZE  
+PERCENTAGE OF PASSING  
+1m Depth 
+2m Depth 
+2.475m Depth 
+3m Depth 
+4m Depth 
+10 mm 
+100 
+100 
+100 
+100 
+100 
+4.75 mm 
+46.4 
+45.8 
+44.1 
+42.4 
+40.5 
+2.36 mm 
+32.5 
+31.5 
+29.5 
+27.2 
+24.8 
+1.18 mm 
+19.7 
+18.3 
+16 
+12.9 
+10.3 
+600 micron 
+9.5 
+8.7 
+7.1 
+5.3 
+4.0 
+300 micron 
+3.2 
+2.9 
+2.3 
+2.1 
+1.6 
+150 micron 
+0 
+0 
+0 
+0 
+0 
+75 micron 
+0 
+0 
+0 
+0 
+0 
+ 
+ 
+ 
+ 
+Observation: 
+The inference from the graph shows that the gravels exists up to 4m depth. 
+ 
+ 
+Time Institute for Materials Testing, Trichy 
+ 
+ 
+ 
+ 
+ 
+ 
+                    22 
+ 
+ 
+ 
+Description 
+1m Depth 
+2m Depth 
+2.475m Depth 
+3m Depth 
+4m Depth 
+Fineness modulus 
+4.887 
+4.928 
+5.010 
+5.101 
+5.188 
+
+=== PAGE 30 ===
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+CALCULATION  
+OF  
+SAFE BEARING CAPACITY 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+
+=== PAGE 31 ===
+Report on soil investigation for construction of Wind Mill Tower 
+ at DN 142, Bukkanhatti Village, Karnataka 
+ 
+4.1 Safe Bearing Capacity calculations based on shear consideration (Direct Shear): 
+As Per IS 6403:1981 
+At 2.475m depth (Bore Hole 1) 
+Proving Ring capacity 200kg = 966.2 division  
+Area of the shear box = 6cm x 6cm = 36cm2 
+                   Normal Stress (kg/cm2) 
+No. of Division  
+Stress 
+ 
+0.5 
+ 
+24 
+ 
+ 
+0.138 
+ 
+1.0 
+ 
+83 
+ 
+ 
+0.477 
+ 
+1.5 
+ 
+143 
+ 
+ 
+0.822 
+ 
+Stress   
+ = Load / Area 
+  
+= (200/966.2) * 24* (1/36)  
+= 0.138 
+Ø  
+ = tan-1 (0.822-0.138) 
+ 
+= 34.38° 
+ 
+Net safe bearing capacity of the soil (as per IS 6403:1981) 
+ 
+General Shear failure 
+ qult 
+= C Nc Sc dc ic + q (Nq- 1) Sq dq iq + 0.5 B Ƴ Nᵞ Sᵞ dᵞ iᵞ W’  
+(Intermediate Shear failure) 
+qult 
+= (5/6) C N’’c Sc dc ic + q (N’’q- 1) Sq dq iq + 0.5 B Ƴ N’’ᵞ Sᵞ dᵞ iᵞ W’  
+(Local Shear failure) 
+qult 
+= (2/3) C N’c Sc dc ic + q (N’q- 1) Sq dq iq + 0.5 B Ƴ N’ᵞ Sᵞ dᵞ iᵞ W’  
+ 
+Where 
+ 
+C 
+ 
+= 
+Cohesion in t/m2 
+Nc, Nq, Nᵞ   
+= 
+Bearing Capacity Factors for angle of internal friction (Φ) 
+N’c, N’q, N’ᵞ   
+= 
+Bearing Capacity Factors for angle of internal friction (Φ’) 
+ Where,  
+Φ’ 
+=  
+tan-1 (0.67 tan Φ) 
+N’’c, N’’q, N’’ᵞ   = 
+Bearing Capacity Factors for Intermediate values of Φ & Φ’ 
+Sc, Sq, Sᵞ 
+= 
+Shape Factors (From Table 2 of IS 6403 – 1981) 
+dc, dq, dᵞ 
+= 
+Depth Factors 
+ic, iq, iᵞ 
+= 
+Inclination Factors 
+ 
+ 
+q 
+= 
+Effective surcharge at the base level of foundation in t/m2 
+ 
+ 
+ 
+B 
+= 
+Width of footing, diameter of circular footing in m 
+ 
+ 
+ᵞ 
+= 
+Bulk unit weight of soil in t/m3 
+W’ 
+= 
+Correction factor for location of water table 
+ 
+Time Institute for Materials Testing, Trichy 
+ 
+ 
+ 
+ 
+ 
+ 
+                  23 
+ 
+  
+ 
+
+=== PAGE 32 ===
+Report on soil investigation for construction of Wind Mill Tower 
+ at DN 142, Bukkanhatti Village, Karnataka 
+ 
+At 2.475m depth (Bore hole 1), the Soil profile is Gravels 
+ 
+If  
+C 
+= 
+0  
+Φ 
+=  
+34.38° (based on laboratory test) 
+ 
+This depth belongs to Intermediate shear failure 
+Applying these parameters in the above equation  
+ 
+qult 
+=  
+(5/6) C N’’c Sc dc ic + q (N’’q- 1) Sq dq iq + 0.5 B Ƴ N’’ᵞ Sᵞ dᵞ iᵞ 
+W’  
+Where   
+C  
+=  
+0 (Since no Cohesion) 
+Therefore,  
+qult 
+= 
+q (N’’q- 1) Sq dq iq + 0.5 B Ƴ N’’ᵞ Sᵞ dᵞ iᵞ W’ 
+ 
+ 
+ 
+N’’c 
+= 
+31.823;  
+N’’q  
+=  
+20.489;  
+N’’ᵞ  
+=  
+26.866 
+Bearing Capacity calculation through shear density of soil ‘ᵞ’ 
+There are two relationships of weight of soil to Volume of soil as 
+i) Total density or Bulk density 
+ii) Dry density 
+ 
+Therefore, Total Bulk density,  ᵞt =  
+Total Weight of soil  
+=    W 
+    
+Total Volume of soil              V 
+Dry Density  
+ 
+ 
+ᵞd = Ws/V;  
+Whereas Ws = Total weight of solids  
+ 
+In a particular case the total density will be known as saturated density, when the soil is saturated. 
+Another density of soil will be known as submerged or buoyant density, ᵞb when the soil is submerged 
+in water. 
+ᵞb  
+=  
+ᵞt - ᵞw  ; 
+ᵞw  
+=  
+Density of water = 1 g/cc or 1 t/m3 
+Mostly soils submerged in water are saturated. 
+Hence   
+ᵞbuoyant = 
+ᵞsat - ᵞw  
+Based on the above equations,  
+ᵞ 
+= 
+ᵞsat  
+ 
+= 1.99 t/m3  
+d 
+= 
+2.475m 
+Here,   
+ᵞb  
+= 
+ᵞsat – 1  
+= 1.99 – 1 
+= 0.99 t/m3  
+ 
+Time Institute for Materials Testing, Trichy 
+ 
+ 
+ 
+ 
+ 
+ 
+                   24 
+ 
+ 
+
+=== PAGE 33 ===
+Report on soil investigation for construction of Wind Mill Tower 
+ at DN 142, Bukkanhatti Village, Karnataka 
+ 
+ 
+Therefore,  
+q 
+= 
+ᵞb x d 
+ 
+= 0.99 x 2.475 = 2.450 t/m2 
+Sq  
+=  
+1.2   
+& Sᵞ  
+= 0.6 
+dq  
+=  
+1.023 
+& dᵞ 
+= 1.023 
+ 
+ 
+iᵞ 
+= 
+1 
+& iq 
+= 1 
+ 
+ 
+B 
+= 
+Width / Diameter of foundation = 20m  
+ 
+ 
+W’ 
+= 
+0.5  
+Applying in the above equation  
+qult 
+= q (Nq- 1) Sq dq iq + 0.5 B ᵞ Nᵞ Sᵞ dᵞ iᵞ W’ 
+ 
+ 
+ 
+= 2.450 x (20.489 - 1) x 1.2 x 1.023 x 1 + 0.5 x 20 x 1.99 x 26.866 x0.6 x 1.023 x1 x 0.5 
+ 
+= 222.80 t/m2 
+Applying factor of safety as 3  
+Then allowable bearing capacity 
+qna 
+= 
+222.80 / 3 = 
+74.27 t/m2 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+Time Institute for Materials Testing, Trichy 
+ 
+ 
+ 
+ 
+ 
+ 
+                    25 
+ 
+ 
+
+=== PAGE 34 ===
+Report on soil investigation for construction of Wind Mill Tower 
+ at DN 142, Bukkanhatti Village, Karnataka 
+ 
+4.2 Safe Bearing Capacity calculations based on settlement consideration  
+(SPT value): 
+Considering dia of the raft (d)
+=
+20 m
+Considering thickness of the raft (t)
+=
+1.5 m
+( π x d2)/ 4
+=
+314.159 m2
+Considering the circular dia of foundation as equivalent size of square portion
+ (as per Bowel’s Page.No.306)
+Therefore side of the square,
+L (or )B
+=
+17.725 m
+B'
+=
+8.8623 m
+=
+7.525 m
+Therefore 
+ H/B'
+=
+0.849
+ L/B
+=
+1
+Therefore I1, & I2  from table 5.2 of page no. 304 of Bowle's
+I1
+=
+0.1133
+I2
+=
+0.0830
+Poisson value of the soil
+Is
+(From
+page
+306
+of
+Bowle's book)
+=
+I1 + [(1-2v)/(1-v)]I2
+Soil Strata
+From
+To
+Depth (m)
+Gravels
+2.475
+4.500
+2.025
+790
+Hard Rock
+4.500
+10.000
+5.500
+2041
+1704.352
+Poisson value of the soil
+v
+=
+0.21
+Is
+=
+0.174
+=
+4
+=
+0.95
+The self weight of the foundation
+=
+Π/4* d2 * t * ρ 
+Considering submerged unit weight of concrete,
+ρ 
+=
+1.5 t/m3
+=
+706.86 t
+=
+707.00 t (nearly)
+=
+150 t
+Hence the total vertical load on soil
+Q
+=
+857 t
+Therefore Soil pressure at the base of the footing as per Bowel’s page No. 288
+qv
+=
+(Q/Z2 ) Ab        
+where 
+Z = Founding Depth (m)
+=
+2.475 m
+When 
+=
+0
+=
+0
+Ab is a function of  r/z
+=
+0.477 (for r/z = 0)
+qv
+=
+66.73 t/m2
+Hence the elastic immediate settlement ΔH  (as per Bowel’s page no. 306)
+Where, Eavearge
+=
+170435.22 t/m2
+ΔH
+=
+qv B’ [(1-µ2) / Eaverage] x m x Is x If
+=
+0.00219657 m
+=
+2.20 mm
+Elastic Settlement Calculation 
+Area of the raft
+Elasticity 
+Modulus, 'E' (Mpa)
+Poisson ratio 'µ'
+0.24
+0.21
+r (i.e., Load at the centre of the foundation)
+r/z from the table in the page 288 of bowel’s
+H {Total depth of Investigation (10m) - Founding depth (2.475m)}
+Approximate total vertical load including dynamic component on 
+Soil Strata from Below foundation to Investigation depth
+m (Since lthe load is at centre from page 306)
+If (Based on IS 8009 part 1-1976)
+Average
+0.2
+ 
+ 
+Time Institute for Materials Testing, Trichy 
+ 
+ 
+ 
+ 
+ 
+ 
+                   26 
+ 
+ 
+
+=== PAGE 35 ===
+Report on soil investigation for construction of Wind Mill Tower 
+ at DN 142, Bukkanhatti Village, Karnataka 
+ 
+ 
+Calculation of safe bearing capacity for Raft or Mat foundation:   
+For 60mm Settlement: 
+ 
+ 
+q 
+= 
+ 0.7 (N- 3) R’w Cd Sp 
+ 
+  
+ 
+Where, 
+ 
+ 
+q 
+= 
+Net safe bearing capacity of soil (t/m2)  
+ 
+ 
+Sp 
+= 
+Permissible settlement (6.0 cm)  
+ 
+ 
+ 
+N 
+= 
+Corrected SPT values 
+ 
+ 
+R’w 
+= 
+Correction factor for water table level 
+Cd 
+= 
+Correction factor for depth of embedment  
+=  
+1+(D/B) 
+ 
+D = Depth = 2.475m 
+B = Width / Diameter of foundation = 20m 
+ 
+ 
+Cd 
+= 
+1+(2.475/20) = 1.1237 
+ 
+Then 
+ 
+qna 
+= 
+ 0.7 (N- 3) R’w Cd x 6.0 
+ 
+This location (DN 142) @ 2.475m depth SPT ‘N’ Value = 53 
+ 
+ 
+qna  
+= 0.7 x (53-3) x 0.5 x 1.1237 x 6.0 = 117.99 t/m2 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+Time Institute for Materials Testing, Trichy 
+ 
+ 
+ 
+ 
+ 
+ 
+                   27 
+ 
+ 
+
+=== PAGE 36 ===
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+CALCULATION  
+OF  
+SAFE BEARING CAPACITY VALUES 
+FOR  
+RAFT FOUNDATION 
+(60MM SETTLEMENT) 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+
+=== PAGE 37 ===
+Report on soil investigation for construction of Wind Mill Tower 
+ at DN 142, Bukkanhatti Village, Karnataka 
+ 
+ 
+5. Calculation of safe bearing capacity of the soil for Raft foundation:  
+ 
+5.1 Safe Bearing capacity of soil based on SPT values  
+        
+ 
+Bore Hole No. 
+ 
+Depth (m) 
+ 
+SPT value 
+Safe Bearing capacity of soil 
+(60mm Settlement) 
+KN/m2 
+t/m2 
+BH – 1 
+1.00 
+50 
+1036.4 
+103.64 
+BH – 1 
+2.00 
+52 
+1131.9 
+113.19 
+BH – 1 
+2.475 
+53 
+1179.9 
+117.99 
+BH – 1 
+3.00 
+54 
+1231.4 
+123.14 
+BH – 1 
+4.00 
+56 
+1335.6 
+133.56 
+ 
+5.2 Safe Bearing capacity of soil based on Shear Failure Criteria: 
+Through Direct Shear 
+Bore Hole 
+No. 
+Depth (m) 
+Normal 
+Stress 
+(kg/cm2) 
+ 
+Division 
+Ø 
+(in degrees) 
+Safe Bearing Capacity 
+of Soil (t/m2) 
+BH -1 
+1.00 
+0.5 
+1.0 
+1.5 
+24 
+82 
+141 
+ 
+33.93 
+ 
+57.55 
+BH -1 
+2.00 
+0.5 
+1.0 
+1.5 
+24 
+82 
+142 
+34.16 
+67.62 
+BH -1 
+2.475 
+0.5 
+1.0 
+1.5 
+24 
+83 
+143 
+34.38 
+74.27 
+BH -1 
+3.00 
+0.5
+1.0 
+1.5 
+24
+84 
+144 
+34.61 
+81.38 
+BH -1 
+4.00 
+0.5 
+1.0 
+1.5 
+24 
+84 
+145 
+34.83 
+93.19 
+ 
+ 
+ 
+ 
+Time Institute for Materials Testing, Trichy 
+ 
+ 
+ 
+ 
+ 
+ 
+                    28 
+ 
+
+=== PAGE 38 ===
+Report on soil investigation for construction of Wind Mill Tower 
+ at DN 142, Bukkanhatti Village, Karnataka 
+ 
+ 
+Dia (m)
+W'
+γSoil
+C
+Ø
+Ø'
+F
+q (t/m2)
+Nc
+Nq
+Nγ
+Sc
+Sq
+Sγ
+dc
+dq
+dγ
+Sc
+Sq
+Sγ
+1.0
+20.00
+0.50
+1.98
+0.00
+33.93 24.16
+3
+0.98
+Intermediate 30.718 19.475 25.136
+1.3
+1.2
+0.8
+1.019
+1.009
+1.009
+1
+1
+1
+172.64
+57.55
+2.0
+20.00
+0.50
+1.98
+0.00
+34.16 24.34
+3
+1.96
+Intermediate 31.276 19.986 26.004
+1.3
+1.2
+0.8
+1.038
+1.019
+1.019
+1
+1
+1
+202.87
+67.62
+2.475
+20.00
+0.50
+1.99
+0.00
+34.38 24.52
+3
+2.45
+Intermediate 31.823 20.489 26.866
+1.3
+1.2
+0.8
+1.047
+1.023
+1.023
+1
+1
+1
+222.80
+74.27
+3.0
+20.00
+0.50
+1.99
+0.00
+34.61 24.71
+3
+2.97
+Intermediate 32.410 21.032 27.801
+1.3
+1.2
+0.8
+1.057
+1.029
+1.029
+1
+1
+1
+244.15
+81.38
+4.0
+20.00
+0.50
+1.99
+0.00
+34.83 24.88
+3
+3.96
+Intermediate 32.985 21.567 28.729
+1.3
+1.2
+0.8
+1.077
+1.038
+1.038
+1
+1
+1
+279.56
+93.19
+Legend
+L = Length; B = Breadth; W' = Correction factor for water table; γsoil = Unit weight of soil; C = Cohesion;
+Ø = Angle of shearing reistance(General Shear); Ø' = Angle of shearing resistance (Local Shear); 
+F = Factor of Safety; q = Effective surcharge of soil above footing;
+5.3 Calculation of Bearing Capacity through shear considering both Angle of internal friction & Cohesion
+Soil Profile
+Depth Factor
+Net
+Ultimate
+Bearing
+Capacity (qd t/m
+2)
+Safe
+Bearing
+Capacity (qc t/m
+2)
+Bore 
+Hole No.
+Input Values
+Shape Factor
+Depth 
+(m)
+Gravels
+Inclination Factor
+Mode
+of
+Fialure
+Bearing capacity factor
+DN 142
+ 
+ 
+ 
+ 
+ 
+ 
+Time Institute for Materials Testing, Trichy 
+ 
+ 
+ 
+ 
+ 
+ 
+                                                                                                                                             29 
+
+=== PAGE 39 ===
+Report on soil investigation for construction of Wind Mill Tower 
+ at DN 142, Bukkanhatti Village, Karnataka 
+ 
+5.4 Comparison of safe bearing capacity of soil through Shear and Settlement 
+consideration: 
+ 
+Bore Hole no. 
+Depth (m) 
+Safe Bearing Capacity (t/m2) 
+Shear consideration 
+(Direct Shear) 
+Settlement 
+consideration 
+(60mm Settlement) 
+BH – 1 
+1.00 
+57.55 
+103.64 
+BH – 1 
+2.00 
+67.62 
+113.19 
+BH – 1 
+2.475 
+74.27 
+117.99 
+BH – 1 
+3.00 
+81.38 
+123.14 
+BH – 1 
+4.00 
+93.19 
+133.56 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+Time Institute for Materials Testing, Trichy 
+ 
+ 
+ 
+ 
+ 
+ 
+                    30 
+ 
+ 
+ 
+
+=== PAGE 40 ===
+Report on soil investigation for construction of Wind Mill Tower 
+ at DN 142, Bukkanhatti Village, Karnataka 
+ 
+5.5 Recommended safe bearing capacity values at different depths for 
+Raft Foundation 
+Considering the lesser value of the above, the safe Bearing Capacity, values at different depths are 
+recommended below: 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+The above test data and findings are relevant and applicable only for the soil conditions existing at the 
+test site. Any change in the soil strata observed during excavation may be reported to the laboratory, 
+which will redefine the bearing capacity of the soil.   
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+Time Institute for Materials Testing, Trichy 
+ 
+ 
+ 
+ 
+ 
+ 
+                    31 
+ 
+Bore Hole 
+ 
+Depth (m) 
+Safe Bearing Capacity (t/m2)
+(60mm Settlement) 
+BH – 1 
+1.00 
+57.55 
+BH – 1 
+2.00 
+67.62 
+BH – 1 
+2.475 
+74.27 
+BH – 1 
+3.00 
+81.38 
+BH – 1 
+4.00 
+93.19 
+
+=== PAGE 41 ===
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+RQD 
+ (ROCK QUALITY DESIGNATION) 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+
+=== PAGE 42 ===
+Report on soil investigation for construction of Wind Mill Tower 
+ at DN 142, Bukkanhatti Village, Karnataka 
+ 
+6. RQD (ROCK QUALITY DESIGNATION) 
+6.1 Definition of RQD  
+The RQD is defined as the cumulative length of core pieces longer than 10cm in a run 
+divided by the total length of the core run.  The total length of core must include all lost core 
+sections.  Any mechanical breaks cause by the drilling process or in extracting the core from 
+the core barrel should be ignored. RQD should be measured as soon as possible after 
+drilling. 
+ 
+Table 1. Rock Mass Classification Based on RQD 
+RQD 
+Rock Quality Classification 
+<25% 
+Very Poor 
+25-50% 
+Poor 
+50-75% 
+Fair 
+75-90% 
+Good 
+90-100% 
+Excellent 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+Time Institute for Materials Testing, Trichy 
+ 
+ 
+ 
+ 
+ 
+ 
+                 32
+  
+ 
+ 
+
+=== PAGE 43 ===
+Report on soil investigation for construction of Wind Mill Tower 
+ at DN 142, Bukkanhatti Village, Karnataka 
+ 
+6.2 Geotechnical Parameters for Rock Sample 
+ 
+Water Absorption:  
+ 
+This test helps to determine the water absorption of rock sample as per IS 2720 – Part – II. 
+Two sample pieces should be tested separately and the individual and mean results should 
+be reported. 
+ 
+Water Absorption = (A – B)/ B * 100 
+ 
+ 
+Where, 
+ 
+ 
+A is the Weight of the Saturated surface dried sample 
+B is the Weight of the Oven dried sample 
+ 
+Point Load Index Test and Uniaxial Compressive Strength Test of Rock 
+ 
+The International Society of Rock Mechanics (ISRM, 1985) has established the basic 
+procedures for testing and calculation of the point load strength index. There are three basic 
+types of Point load tests: axial, diametral and block or lump. The axial and diametral tests 
+are conducted on rock core samples. In the axial test, the core is loaded parallel to the 
+longitudinal axis of the core and this test is most comparable to a UCS test. 
+ 
+Point Load Index test consists of squeezing pieces of rock diametrically between two 
+hardened steel cones. For these tests, rock pieces must have a length at least 1.4 times 
+their diameter. The Point load test allows the determination of the uncorrected Point load 
+strength index. It must be corrected to the equivalent diameter (De) of 54mm. If the core 
+being tested is “near” 54mm in diameter (like NX core), the correction is not necessary.  
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+Time Institute for Materials Testing, Trichy 
+ 
+ 
+ 
+ 
+ 
+ 
+                  33
+  
+ 
+ 
+
+=== PAGE 44 ===
+Report on soil investigation for construction of Wind Mill Tower 
+ at DN 142, Bukkanhatti Village, Karnataka 
+ 
+ 
+The point load index, Is is equal to 
+ 
+ 
+ 
+ 
+ 
+ 
+Is = P/ D2 
+Where  
+P is the load at rupture and 
+D is the core diameter 
+ 
+As Hoek (1977) pointed out, the mechanics of the PLT actually causes the rock to fail in 
+tension. The PLT’s accuracy in predicting the UCS therefore depends on the ratio between 
+the UCS and the tensile strength. For most brittle rocks, the ratio is approximately 10. For 
+soft mudstones and clay stones, however, the ratio may be closer to 5. This implies that PLT 
+results might have to be interpreted differently for the weakest rocks. 
+ 
+Early studies (Bieniawski, 1975; Broach and Franklin, 1972) were conducted on hard, strong 
+rocks and found that relationship between UCS and the Point load strength could be 
+expressed as  
+ 
+ 
+ 
+ 
+ 
+ 
+UCS = (K) Is50 = 24 Is50    
+ 
+Where 
+ 
+K is the “conversion factor”. Subsequent studies found that K = 24 was not as 
+universal as had been hoped and that instead there appeared to be a broad range of 
+conversion factors. 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+Time Institute for Materials Testing, Trichy 
+ 
+ 
+ 
+ 
+ 
+ 
+                  34
+  
+ 
+
+=== PAGE 45 ===
+Report on soil investigation for construction of Wind Mill Tower 
+ at DN 142, Bukkanhatti Village, Karnataka 
+ 
+6.3 Rock Mass Rating System for Jointed Rock Masses 
+(Bieniawski) 
+ 
+A. Classification Parameters and their Ratings 
+ 
+ 
+Time Institute for Materials Testing, Trichy 
+ 
+ 
+ 
+ 
+ 
+ 
+                   35    
+ 
+Parameter
+Range of Values
+ 
+1.
+Strength of 
+intact 
+rock 
+material 
+Point 
+– 
+load 
+Strength Index 
+> 10 MPa 
+4-10 MPa 
+2-4 MPa 
+1-2 MPa 
+For this low range 
+uniaxial compressive 
+test is preferred 
+Uniaxial 
+Compressive 
+Strength 
+> 250 MPa 
+100-250 MPa 
+50-100 MPa 
+25-50 MPa 
+5-25 
+MPa 
+1-5 
+MPa 
+< 1 
+MPa 
+Rating
+15
+12
+7
+4
+2
+1
+0
+2.
+Drill core quality RQD 
+90%-100% 
+75%-90% 
+50%-75% 
+25%-50% 
+< 25% 
+Rating 
+20 
+17 
+13 
+8 
+3 
+3.
+Spacing of discontinuities 
+> 2m 
+0.6 – 2m 
+200-600mm 
+60-200mm 
+< 60mm 
+Rating 
+20 
+15 
+10 
+8 
+5 
+ 
+ 
+ 
+4.
+Condition of discontinuities 
+Very rough 
+surfaces. 
+Not 
+continuous 
+No 
+separation 
+Slightly rough 
+surfaces. 
+Separation < 
+1mm. Slightly 
+Weathered 
+walls. 
+Slightly rough 
+surfaces. 
+Separation < 
+1mm. Highly 
+Weathered 
+walls. 
+Slickenside 
+surfaces or 
+Gouge 
+< 
+5mm 
+or 
+Separation 
+1-5mm 
+continuous 
+Soft gouge > 5mm 
+thick or Separation > 
+5mm continuous 
+Rating 
+30 
+25 
+20 
+10 
+0 
+5.
+Ground 
+water 
+ 
+Inflow per 10m 
+tunnel length 
+ 
+None 
+(OR) 
+ 
+0 
+ 
+(OR) 
+Completely 
+dry 
+<10 litres/min 
+(OR) 
+ 
+0,0 – 0,1 
+ 
+(OR) 
+Damp 
+10-25 
+litres/min 
+(OR) 
+ 
+0,1 – 0,2 
+ 
+(OR) 
+Wet 
+ 
+25-125 
+litres/min 
+(OR) 
+ 
+0,2 – 0,5 
+ 
+(OR) 
+Dripping 
+ 
+>125 litres/min 
+(OR) 
+ 
+>0,5 
+ 
+(OR) 
+Flowing 
+ 
+ 
+Joint water 
+Ratio pressure 
+may  or principal 
+stress 
+ 
+General 
+conditions 
+Rating 
+15 
+10 
+7 
+4 
+0 
+
+=== PAGE 46 ===
+Report on soil investigation for construction of Wind Mill Tower 
+ at DN 142, Bukkanhatti Village, Karnataka 
+ 
+ 
+6.4 GEOTECHNICAL PARAMETERS FOR ROCK SAMPLE 
+AT 4.5m to 10m DEPTH 
+ 
+The following laboratory test results are obtained for the rock sample Report on soil 
+investigation for construction of Wind Mill Tower at DN 142, Bukkanhatti Village, Karnataka 
+site at a depth of 4.5m to 10m (Hard rock). The rock core photos are presented in the soil 
+and rock sample photos.  
+ 
+ 
+S.No. 
+ 
+ 
+IS Codes 
+ 
+ 
+Parameter 
+ 
+ 
+Result  
+(4.5m to 10m depth) 
+ 
+1 
+ 
+IS 11315 Part 11 - 1985 
+ 
+REC 
+ 
+60 % 
+ 
+2 
+ 
+IS 11315 Part 11 - 1985 
+ 
+RQD 
+ 
+60 % 
+ 
+3 
+ 
+IS 9143 - 1979   
+ 
+Uniaxial Compressive 
+strength of rock 
+ 
+42 Mpa 
+ 
+4 
+ 
+IS 8764 - 1998 
+ 
+Point Load Index 
+ 
+1.75 Mpa 
+ 
+5 
+ 
+IS 2720 Part II 
+ 
+Water Absorption 
+ 
+Nil 
+6 
+ (IS 1124 – 1974) 
+Density 
+3.400 gm/cc 
+7 
+ (IS 1124 – 1974) 
+Specific gravity 
+2.85 
+8 
+(IS 11315 Part 11 – 
+1985) 
+RMR 
+72% 
+9 
+(IS 9143 – 1979) 
+Allowable Bearing 
+Pressure 
+372 t/m2 
+10 
+Description of rock 
+Good 
+ 
+ 
+Time Institute for Materials Testing, Trichy 
+ 
+ 
+ 
+ 
+ 
+ 
+                   36 
+ 
+ 
+
+=== PAGE 47 ===
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+SOIL & ROCK SAMPLE PHOTOS 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+
+=== PAGE 48 ===
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+       
+ 
+ 
+0  
+ 
+                  
+ 
+ 
+                    
+10m 
+ 
+ 
+ 
+ 
+ 
+Bore Hole No: 1 
+Depth : 0 to 10m 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+
+=== PAGE 49 ===
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+  
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+SITE PHOTOS 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+
+=== PAGE 50 ===
+ 
+ 
+ 
+DN 142, Bukkanhatti Village, Karnataka 
+
